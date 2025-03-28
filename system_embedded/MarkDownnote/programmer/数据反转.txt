@@ -1,0 +1,5 @@
+uint16_t ad7606Buff[SAMPLING_POINTS*SAMPLING_CHANNEL] = {0};
+uint8_t ad7606Buff_1[SAMPLING_POINTS*SAMPLING_CHANNEL]={0};
+
+ad7606Buff[0]=((ad7606Buff[0]|ad7606Buff_1[1])<<8)|ad7606Buff_1[0];
+ad7606Buff[1]=((ad7606Buff[1]|ad7606Buff_1[3])<<8)|ad7606Buff_1[2];

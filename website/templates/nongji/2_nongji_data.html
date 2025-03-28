@@ -1,0 +1,674 @@
+<html lang="en" style="height: 100%"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>大型农业机械多模态数据采集与远程运维系统</title>
+
+    <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../../static/css/templatemo-style.css" rel="stylesheet">
+    <!-- Bootstrap core CSS     -->
+    <link href="../../static/css/bootstrap.min11.css" rel="stylesheet">
+
+    <!-- Animation library for notifications   -->
+    <link href="../../static/css/animate.min11.css" rel="stylesheet">
+
+    <!--  Paper Dashboard core CSS    -->
+    <link href="../../static/css/paper-dashboard11.css" rel="stylesheet">
+
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="../../static/css/demo11.css" rel="stylesheet">
+
+
+    <!--  Fonts and icons     -->
+
+
+
+
+
+<style>
+            .chart-container {
+            width: 100%;
+            height: 400px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+</style></head>
+
+<body class="templatemo-container" style="height: 100%;margin-left:auto;margin-right: auto">
+<!-- header -->
+<div class="header-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-4 site-name-container">
+                <img src="../../static/img/logo.png" alt="Site logo" class="site-logo">
+                <h1 class="site-name">项目展示</h1>
+            </div>
+            <div class="mobile-menu-icon">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-8 templatemo-nav-container">
+                <nav class="templatemo-nav" style="display: none;">
+                    <ul>
+                        <li style="font-size: 20px;"><a href="/2_nongji_index">首页</a></li>
+                        <li style="font-size: 20px;"><a href="/2_nongji_about">关于</a></li>
+                        <li style="font-size: 20px;"><a href="/2_nongji_data" class="active">数据</a></li>
+                        <li style="font-size: 20px;"><a href="/2_nongji_other">其他</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end header -->
+<!-- header image -->
+<div class="header-img-3"></div>
+<!-- end header image -->
+<!-- Welcome message -->
+
+
+<div class="welcome-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="welcome-wrapper">
+                    <h2 class="welcome-title text-uppercase">项目名称</h2>
+                    <img src="../../static/img/welcome-divider-lines.png" alt="Welcome divider" class="welcome-divider-lines-img">
+                    <p class="welcome-description " style="font-size: 19px;">
+                        大型农业机械多模态数据采集与远程运维系统</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Welcome message -->
+
+
+<div class="wrapper" style="height:2200px">
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar bar1"></span>
+                    <span class="icon-bar bar2"></span>
+                    <span class="icon-bar bar3"></span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div style="margin:0 auto;font-size: 24px;height: 30px;line-height: 30px;text-align: center;"><span id="date"></span></div>
+        </div>
+        <div class="content" style="height:1400px">
+
+            <div class="container-fluid">
+               
+                <div class="row">
+                                <!-- device ID -->
+                    <div class="col-lg-2 col-sm-4">
+                        <div class="card">
+                            <div class="content" style="min-height: 140px;">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <img src="../../static/img/shebeiip.png" alt="设备ID图片" style="width: 100px;height: 100px;">
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>设备ID</p>
+                                            <span id="device_NO">12312</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr>
+                                    <div class="stats" style="font-size: 12px;">
+                                        <i class="ti-reload"></i>Device ID
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                <!-- frequency -->
+                    <div class="col-lg-2 col-sm-4">
+                        <div class="card">
+                            <div class="content" style="min-height: 140px;">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <img src="../../static/img/pinlv.png" alt="pinlv图片" style="width: 100px;height: 100px;">
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>采样频率</p>
+                                            <span id="frequency_sample"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr>
+                                    <div class="stats" style="font-size: 12px;">
+                                        <i class="ti-calendar"></i>Frequency
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                <!-- length -->
+                    <div class="col-lg-2 col-sm-4">
+                        <div class="card">
+                            <div class="content" style="min-height: 140px;">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <img src="../../static/img/shijianzhi.png" alt="时间图片" style="width: 100px;height: 100px;">
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>采样长度</p>
+                                            <span id="sample_points"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr>
+                                    <div class="stats" style="font-size: 12px;">
+                                        <i class="ti-timer"></i>Length
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                <!-- machine temperature -->
+                    <div class="col-lg-2 col-sm-4">
+                        <div class="card">
+                            <div class="content" style="min-height: 140px;">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <img src="../../static/img/wenduzhi.png" alt="温度值图片" style="width: 100px;height: 100px;">
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>机械温度</p>
+                                            <span id="temp_machine"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr>
+                                    <div class="stats" style="font-size: 12px;">
+                                        <i class="ti-reload"></i>Temperature
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                <!-- device humidity -->
+                    <div class="col-lg-2 col-sm-4">
+                        <div class="card">
+                            <div class="content" style="min-height: 140px;">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <img src="../../static/img/shiduzhi.png" alt="湿度值图片" style="width: 100px;height: 100px;">
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>运行湿度</p>
+                                            <span id="humidity_device"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr>
+                                    <div class="stats" style="font-size: 12px;">
+                                        <i class="ti-reload"></i>Humidity
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                <!-- device temperature -->
+                    <div class="col-lg-2 col-sm-4">
+                        <div class="card">
+                            <div class="content" style="min-height: 140px;">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <img src="../../static/img/wenduzhi.png" alt="温度值图片" style="width: 100px;height: 100px;">
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>运行温度</p>
+                                            <span id="temp_device"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr>
+                                    <div class="stats" style="font-size: 12px;">
+                                        <i class="ti-reload"></i> Temperature
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">模型预测结果</h4>
+                                <p class="category"></p>
+                            </div>
+                            <div class="content" style="min-height: 140px;">
+
+                                <div class="container">
+                                    <!-- row -->
+
+                                    <div class="section overview-section">
+                                        <div class="wrap">
+                                            <div class="section-content overview-cards">
+                                                <div id="barChart" class="chart-container" _echarts_instance_="ec_1730291041235" style="user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;"><div style="position: relative; width: 918px; height: 378px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="963" height="396" style="position: absolute; left: 0px; top: 0px; width: 918px; height: 378px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class="" style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1), visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1), transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 4px; color: rgb(102, 102, 102); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 10px; top: 0px; left: 0px; transform: translate3d(741px, 193px, 0px); border-color: rgb(255, 255, 255); pointer-events: none; visibility: hidden; opacity: 0;">Z: 100%</div></div>
+                                                <div id="radarChart" class="chart-container" _echarts_instance_="ec_1730291041236" style="user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;"><div style="position: relative; width: 918px; height: 378px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="963" height="396" style="position: absolute; left: 0px; top: 0px; width: 918px; height: 378px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+                                                <div id="pieChart" class="chart-container" _echarts_instance_="ec_1730291041237" style="user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;"><div style="position: relative; width: 918px; height: 378px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="963" height="396" style="position: absolute; left: 0px; top: 0px; width: 918px; height: 378px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class="" style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1), visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 4px; color: rgb(102, 102, 102); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 10px; top: 0px; left: 0px; transform: translate3d(485px, 296px, 0px); border-color: rgb(252, 132, 82); pointer-events: none; visibility: hidden; opacity: 0;">类别概率 <br>Z: 100% (100%)</div></div>
+                                                <div id="polarChart" class="chart-container" _echarts_instance_="ec_1730291041238" style="user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;"><div style="position: relative; width: 918px; height: 378px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="963" height="396" style="position: absolute; left: 0px; top: 0px; width: 918px; height: 378px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class="" style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1), visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1), transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 4px; color: rgb(102, 102, 102); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 10px; top: 0px; left: 0px; transform: translate3d(434px, 151px, 0px); border-color: rgb(255, 87, 51); pointer-events: none; visibility: hidden; opacity: 0;">Z: 100%</div></div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                                <button data-target="#myModal" data-toggle="modal" class="btn btn-primary btn-lg" id="updateButton">
+                                    Click Launch Demo Modal
+                                </button>
+
+                                <div class="footer">
+                                    <div class="chart-legend">
+                                        <i class="fa fa-circle text-info"></i><i class="fa fa-circle text-danger"></i><i class="fa fa-circle text-warning"></i></div>
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="ti-reload"></i> Updated 3 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<!-- main content -->
+
+
+<div class="blue-divider effect1">
+    <div class="dark-blue-bg"></div>
+    <div class="blue-divider-bg-graphic"></div>
+    <div class="blue-bg"></div>
+</div>
+
+<section class="templatemo-container blue-bg footer-nav effect1">
+    <div class="container">
+        <div class="col-lg-2 col-md-2 col-sm-6 footer-block">
+            <h3 class="text-uppercase">Main menu</h3>
+            <nav class="text-uppercase templatemo-nav-2">
+                <ul>
+                    <li style="font-size: 20px;"><a href="/2_nongji_index">首页</a></li>
+                    <li style="font-size: 20px;"><a href="/2_nongji_about">关于</a></li>
+                    <li style="font-size: 20px;"><a href="/2_nongji_data" class="active">数据</a></li>
+                    <li style="font-size: 20px;"><a href="/2_nongji_other">其他</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 footer-block">
+            <h3 class="text-uppercase">About us</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce malesuada lacus vel tristique rhoncus.
+                Vivamus vel molestie odio. Curabitur pulvinar, diam at pharetra euismod, augue felis pretium est,
+                sit amet accumsan dui enim nec tortor. Cras lobortis feugiat enim. Aliquam rhoncus pharetra ligula
+                accumsan sodales. Donec blandit sed justo quis sollicitudin. Nulla et leo id purus suscipit rhoncus
+                ut at purus. Suspendisse molestie sodales porttitor.
+
+                Vivamus et vulputate augue. Etiam et eleifend purus, in sagittis nisi. Vivamus laoreet metus ut nisl
+                euismod molestie. In non lacus placerat ipsum placerat dapibus eu vel arcu.</p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 footer-block">
+            <h3 class="text-uppercase">Resources</h3>
+            <ul>
+                <li><a href="#">Aenean leogula</a></li>
+                <li><a href="#">Porttitor euconsequat</a></li>
+                <li><a href="#">Vitae eleifend ac enim</a></li>
+                <li><a href="#">Aliquam lorante</a></li>
+                <li><a href="#">Phasellus viverra nulla</a></li>
+                <li><a href="#">Dmetus varius</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 footer-block">
+            <h3 class="text-uppercase">Features</h3>
+            <ul>
+                <li><a href="#">lorem quis bibendum</a></li>
+                <li><a href="#">Auctor nisi elit conser</a></li>
+                <li><a href="#">at ipsum, nec sagittis</a></li>
+                <li><a href="#">Duis sed odio sit amet</a></li>
+                <li><a href="#">Fnibh vulpu</a></li>
+                <li><a href="#">ftate cursus a sit amet</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- end main content -->
+<footer class="text-center">
+    <p class="small copyright-text">Copyright © 2015.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">网页模板</a>
+    </p>
+</footer>
+
+<!-- JS -->
+<script type="text/javascript" src="../../static/js/jquery-1.11.2.min.js"></script> <!-- jQuery -->
+<script type="text/javascript" src="../../static/js/isotope.pkgd.min.js"></script>
+<!-- Isotope, http://isotope.metafizzy.co -->
+<script type="text/javascript" src="../../static/js/templatemo-script.js"></script> <!-- Templatemo Script -->
+<script>
+    // All images are loaded. Call isotope
+    $(window).load(function () {
+        var $container = $('#folio-container');
+        // init
+        $container.isotope({
+            // options
+            itemSelector: '.folio-item',
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            },
+        });
+
+        // filter items when filter link is clicked
+        jQuery('#filters a').click(function () {
+            var selector = $(this).attr('data-filter');
+            $container.isotope({
+                filter: selector
+            });
+            return false;
+        });
+
+        jQuery('#filters li a').click(function () {
+
+            jQuery('#filters li').removeClass('current');
+            jQuery(this).parent().addClass('current');
+        });
+    });
+</script>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('updateButton').addEventListener('click', function () {
+            // Fetch the updated data from the server
+            fetch('/get_updated_data')
+                .then(response => response.json())
+                .then(data => {
+                    console.log("data",data);
+
+                    // Update the HTML elements with the new data
+                    document.getElementById('device_NO').innerHTML = data.device_NO;
+                    document.getElementById('frequency_sample').innerHTML = data.frequency_sample;
+                    document.getElementById('sample_points').innerHTML = data.sample_points;
+                    document.getElementById('temp_machine').innerHTML = data.temp_machine; 
+                    document.getElementById('humidity_device').innerHTML = data.humidity_device;
+                    document.getElementById('temp_device').innerHTML = data.temp_device; 
+
+                    document.getElementById('date').innerHTML = data.date; 
+
+                    // Repeat the above line for each data point you want to update
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        });
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+<script type="text/javascript">
+// app.js
+
+document.addEventListener('DOMContentLoaded', function () {
+    // 初始化 ECharts 实例
+    const barChart = echarts.init(document.getElementById('barChart'));
+    const radarChart = echarts.init(document.getElementById('radarChart'));
+    const pieChart = echarts.init(document.getElementById('pieChart'));
+    const polarChart = echarts.init(document.getElementById('polarChart'));
+
+    console.log('初始化 ECharts 实例完成');
+
+    // 定义图表的初始配置
+    // 条形图配置
+    const initialBarOption = {
+        title: {
+            text: '预测结果 - 条形图'
+        },
+        tooltip: {
+            trigger: 'axis',
+            formatter: '{b}: {c}%'
+        },
+        xAxis: {
+            type: 'category',
+            data: ['G1', 'G2', 'N1', 'N2', 'W1', 'W2', 'Z']
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: {
+                formatter: '{value} %' // 显示百分比
+            },
+            max: 100 // 设定最大值为100%
+        },
+        series: [{
+            type: 'bar',
+            data: [],
+            itemStyle: {
+                color: '#3398DB'
+            }
+        }]
+    };
+
+    // 雷达图配置
+    const initialRadarOption = {
+        title: {
+            text: '预测结果 - 雷达图'
+        },
+        tooltip: {
+            formatter: function (params) {
+                let tooltipText = `${params.seriesName}<br/>`;
+                params.data.value.forEach((val, index) => {
+                    tooltipText += `${params.schema[index].name}: ${val}%<br/>`;
+                });
+                return tooltipText;
+            }
+        },
+        radar: {
+            indicator: [
+                { name: 'G1', max: 100 },
+                { name: 'G2', max: 100 },
+                { name: 'N1', max: 100 },
+                { name: 'N2', max: 100 },
+                { name: 'W1', max: 100 },
+                { name: 'W2', max: 100 },
+                { name: 'Z', max: 100 }
+
+            ]
+        },
+        series: [{
+            name: '预测结果',
+            type: 'radar',
+            data: [{
+                value: [],
+                name: '预测'
+            }]
+        }]
+    };
+
+    // 饼图配置
+    const initialPieOption = {
+        title: {
+            text: '预测结果 - 饼图',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b}: {c}% ({d}%)' // 显示百分比
+        },
+        legend: {
+            top: 'bottom'
+        },
+        series: [{
+            name: '类别概率',
+            type: 'pie',
+            radius: '50%',
+            data: [],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }]
+    };
+
+    // 极坐标条形图配置
+    const initialPolarOption = {
+        title: {
+            text: '预测结果 - 极坐标条形图'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{b}: {c}%' // 显示百分比
+        },
+        angleAxis: {
+            type: 'category',
+            data: ['G1', 'G2', 'N1', 'N2', 'W1', 'W2', 'Z'],
+            boundaryGap: false
+        },
+        radiusAxis: {
+            type: 'value',
+            axisLabel: {
+                formatter: '{value}%' // 显示百分比
+            },
+            max: 100 // 设定最大值为100%
+        },
+        polar: {},
+        series: [{
+            type: 'bar',
+            data: [],
+            coordinateSystem: 'polar',
+            name: '类别概率',
+            stack: 'a',
+            itemStyle: {
+                color: '#FF5733'
+            }
+        }],
+        legend: {
+            show: true,
+            data: ['类别概率']
+        }
+    };
+
+    // 设置初始配置
+    barChart.setOption(initialBarOption);
+    radarChart.setOption(initialRadarOption);
+    pieChart.setOption(initialPieOption);
+    polarChart.setOption(initialPolarOption);
+
+    console.log('设置初始配置完成');
+
+    // 定义函数来更新图表
+    function updateCharts(data) {
+        const probabilities = data.Prediction.probability;
+        const result = data.Prediction.result;
+
+        // 将概率转换为百分比，保留八位小数
+        const classes = Object.keys(probabilities);
+        const scores = Object.values(probabilities).map(score => (score * 100).toFixed(8));
+        console.log('处理后的类别:', classes);
+        console.log('处理后的分数（百分比）:', scores);
+
+        // 更新条形图
+        barChart.setOption({
+            series: [{
+                data: scores.map((score, index) => ({
+                    value: parseFloat(score),
+                    itemStyle: {
+                        color: classes[index] === result ? 'red' : '#3398DB'
+                    }
+                }))
+            }]
+        });
+        console.log('条形图已更新');
+
+        // 更新雷达图
+        radarChart.setOption({
+            series: [{
+                data: [{
+                    value: scores.map(score => parseFloat(score)),
+                    name: '预测'
+                }]
+            }]
+        });
+        console.log('雷达图已更新');
+
+        // 更新饼图
+        const pieData = classes.map((cls, idx) => ({
+            name: cls,
+            value: parseFloat(scores[idx])
+        }));
+        pieChart.setOption({
+            series: [{
+                data: pieData
+            }]
+        });
+        console.log('饼图已更新');
+
+        // 更新极坐标条形图
+        polarChart.setOption({
+            series: [{
+                data: scores.map(score => parseFloat(score)) // 转换为浮点数
+            }]
+        });
+        console.log('极坐标条形图已更新');
+    }
+
+    // 定义函数来获取数据
+    async function fetchData() {
+        try {
+            const response = await fetch('/get_updated_data');
+            if (!response.ok) {
+                console.error('网络响应不是OK');
+                return;
+            }
+            const data = await response.json();
+            if (data.error) {
+                console.error('服务器返回错误:', data.error);
+                return;
+            }
+            console.log('获取到的数据:', data); // 调试用
+            updateCharts(data);
+        } catch (error) {
+            console.error('获取数据时出错:', error);
+        }
+    }
+
+    // 初始获取数据
+    fetchData();
+    // 定时更新数据（例如每60秒更新一次）
+    setInterval(fetchData, 60000);
+});
+
+
+</script>
+
+
+
+</body></html>

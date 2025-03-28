@@ -1,0 +1,368 @@
+<!DOCTYPE html><html><head>
+      <title>spi</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="spi">SPI </h1>
+<h5 id="motorola发明">Motorola发明 </h5>
+<p>高速，全双工，四根线<br>
+SPI线路由一个主机，多个从机组成。</p>
+<h3 id="线1sclk">线1：SCLK </h3>
+<p>提供SCLK的为master</p>
+<h3 id="线2nss">线2：NSS </h3>
+<p>NSS即片选CS信号号线，通过NSS(CS)来选择主机与那个从机通讯<br>
+所有操作都要先拉低CS电平，激活slave<br>
+操作完成后再拉高CS电平，释放slave<br>
+HAL_GPIO_writepin来写入连接芯片CS引脚的电平(即NSS片选)</p>
+<ul>
+<li>传输数据线要将slave的选中，给一个NSS信号，也就是将CS线拉低</li>
+<li>硬件控制：
+<ul>
+<li>可以在MX中设为硬件控制，MX指定一个GPIO，在发送数据时会自动拉低拉高，不用自己操控，只用接上线。</li>
+</ul>
+</li>
+<li>软件模拟：使能一个IO，用到哪个slave，就把那个slave的CS线拉低，结束后把slave的CS拉高
+<ul>
+<li>主设备控制：主设备GPIO控制slave_cs的拉高拉低</li>
+<li>第三方控制：用其他设备控制slave_cs,保证传输数据前拉低，传完拉高即可。</li>
+</ul>
+</li>
+<li>NSS接线方式
+<ul>
+<li>几个slave就接几根线，分开单独控制</li>
+<li>可以一根NSS线同时控制多个，拉低总线就相当于拉低若干个子设备</li>
+<li>也可以把slave的NSS线串在一起，不过这样只要有一个断点，断点后的slave都不会被操控(选中)，没法被选中接收数据。</li>
+</ul>
+</li>
+</ul>
+<h3 id="线34sdo-mosisdi-miso">线3，4：SDO-MOSI/SDI-MISO </h3>
+<p>两条线的数据是同步收发的，若想接收，发送空指令，若想发送，也会接收一些data</p>
+<h4 id="过程">过程： </h4>
+<ol>
+<li>控制(NSS)CS对应的IO引脚电平高/低，选择开启/关闭从设备<br>
+NSS选中后(等效于寻址从设备的操作)，
+<ul>
+<li>与FLASH通讯，发送command(读取指令，擦除指令，页写指令等等，具体看通信对象)，调用transmitreceive指令 收(读) 发(写) 数据</li>
+<li>与其他设备通讯，一般直接调佣transmitreceive即可完成收发数据</li>
+</ul>
+</li>
+</ol>
+<h4 id="性能">性能： </h4>
+<ul>
+<li>常见频率：<br>
+72/4=18Mhz=55ns   一个周期= 55  = 一个下降沿或上升沿(一个周期指低电平脉冲宽度+高电平脉冲宽度) = 55ns传输一个bit<br>
+（1/72Mhz=13.8=14ns   1/18=55.5=55ns）</li>
+<li>传输方式：<br>
+一般在72Mhz，GPIO_speed_low时，wirtepin_set为70ns，writepin_reset为50ns，所以对于高速SPI，不采用软件模拟，而使用硬件SPI<br>
+对于一些较低速的DR单总线，IIC等，可以考虑软件模拟的方式便于移植</li>
+</ul>
+<h4 id="函数区别">函数区别： </h4>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token operator">+</span> HAL_SPI_receivetransmit<span class="token operator">=</span>HAL_SPI_receive<span class="token operator">=</span>HAL_SPI_transmit，
+
+<span class="token function">HAL_SPI_TransmitReceive</span>	<span class="token punctuation">(</span><span class="token operator">&amp;</span>hspi1<span class="token punctuation">,</span>	<span class="token operator">&amp;</span>send<span class="token punctuation">,</span>	<span class="token operator">&amp;</span>read<span class="token punctuation">,</span>	<span class="token number">1</span><span class="token punctuation">,</span>	<span class="token number">0xFFFFFF</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">HAL_SPI_Transmit</span>	<span class="token punctuation">(</span><span class="token operator">&amp;</span>hspi1<span class="token punctuation">,</span>	<span class="token operator">&amp;</span>send<span class="token punctuation">,</span>		<span class="token number">1</span><span class="token punctuation">,</span>	<span class="token number">0xFFFFFF</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">HAL_SPI_Receive</span>		<span class="token punctuation">(</span><span class="token operator">&amp;</span>hspi1<span class="token punctuation">,</span>		<span class="token operator">&amp;</span>read<span class="token punctuation">,</span>	<span class="token number">1</span><span class="token punctuation">,</span>	<span class="token number">0xFFFFFF</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>只不过第一个要传两个地址指针参数进去，后两个只用传一个地址指针参数进去<br>
+三者在全双工模式下 本质上一样，因为数据同步双向，传输一个Data时，transmit和receive在同时进行。</p>
+<h4 id="特别注意parameter">特别注意parameter： </h4>
+<ul>
+<li>参数SIZE，表示个数</li>
+<li>依据你定义的SPI传输通道宽度(指向缓冲区的数据指针宽度)<em>16bit_或者_8bit</em>，发送对应的数据大小
+<ul>
+<li>uint8_t <em>send   =1byte</em>size</li>
+<li>uint16_t <em>send  =2byte</em>size</li>
+</ul>
+</li>
+<li>例如定义了一个uint16_t Rxbuf[  ]； uint16_t *read;</li>
+<li>使用此函数收数据时，
+<ol>
+<li>用于指向接收区域Rxbuf的指针read会指向这个数组的首地址，</li>
+<li>根据size的大小，来自增放入
+<ul>
+<li>例如size=2，则receive两个_16bit_(根据你定义的SPI宽度)的数据放入a[0]和a[1]；因此，在official_function_manual中，SIZE的描述为amount，指传了几帧，而不是帧的大小，帧的大小，也就是SPI宽度是8还是16在初始化中设置</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h2 id="dating">dating... </h2>
+<h4 id="硬件spi与flash通信">硬件SPI与FLASH通信 </h4>
+<p>Personal function depository Q_<br>
+Personal variables and function declarations</p>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code>    <span class="token keyword keyword-void">void</span> <span class="token function">Delay</span><span class="token punctuation">(</span> <span class="token class-name">uint32_t</span> nCount<span class="token punctuation">)</span><span class="token punctuation">;</span>                   
+    
+    <span class="token class-name">uint8_t</span> Send<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">}</span><span class="token punctuation">;</span>                                                              <span class="token comment">//发送区</span>
+    <span class="token class-name">uint8_t</span><span class="token operator">*</span>pSend<span class="token operator">=</span>Send<span class="token punctuation">;</span>
+    
+    <span class="token class-name">uint8_t</span> Read<span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"0"</span><span class="token punctuation">;</span>                                                                      <span class="token comment">//接收区</span>
+    <span class="token class-name">uint8_t</span><span class="token operator">*</span>pRead<span class="token operator">=</span>Read<span class="token punctuation">;</span>
+
+    <span class="token class-name">uint8_t</span> PP<span class="token operator">=</span><span class="token number">0x02</span><span class="token punctuation">,</span>RD<span class="token operator">=</span><span class="token number">0x03</span><span class="token punctuation">,</span>RDID<span class="token operator">=</span><span class="token number">0x90</span><span class="token punctuation">,</span>SE<span class="token operator">=</span><span class="token number">0x20</span><span class="token punctuation">,</span>WREN<span class="token operator">=</span><span class="token number">0x06</span><span class="token punctuation">,</span>RDSR1<span class="token operator">=</span><span class="token number">0x05</span><span class="token punctuation">,</span>ZERO<span class="token operator">=</span><span class="token number">0x00</span><span class="token punctuation">,</span>DummyByte<span class="token operator">=</span><span class="token number">0xFF</span><span class="token punctuation">;</span>     <span class="token comment">//指令</span>
+    <span class="token class-name">uint32_t</span> timeout<span class="token operator">=</span><span class="token number">72000</span><span class="token punctuation">;</span>                                                                      <span class="token comment">//等待超时1ms</span>
+
+    <span class="token class-name">uint8_t</span> <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span><span class="token class-name">uint8_t</span> Data<span class="token punctuation">)</span><span class="token punctuation">;</span>                                     <span class="token comment">//</span>
+    <span class="token keyword keyword-void">void</span> <span class="token function">Q_NSS_PA2_level</span><span class="token punctuation">(</span><span class="token class-name">uint8_t</span> state<span class="token punctuation">)</span><span class="token punctuation">;</span>                                  <span class="token comment">//</span>
+    <span class="token keyword keyword-void">void</span> <span class="token function">Q_SPI_FLASH_busy_reset</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                                    <span class="token comment">//</span>
+    <span class="token keyword keyword-void">void</span> <span class="token function">Q_SPI_FLASH_WREN</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                                          <span class="token comment">//</span>
+    <span class="token keyword keyword-void">void</span> <span class="token function">Q_SPI_FLASH_busy_reset</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                                    <span class="token comment">//</span>
+    <span class="token keyword keyword-void">void</span> <span class="token function">Q_SPI_FLASH_ReadID</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                                        <span class="token comment">//</span>
+    <span class="token keyword keyword-void">void</span> <span class="token function">SPI_FLASH_SE</span><span class="token punctuation">(</span><span class="token class-name">uint32_t</span> SectorAddr<span class="token punctuation">)</span><span class="token punctuation">;</span>                               <span class="token comment">//</span>
+    <span class="token keyword keyword-void">void</span> <span class="token function">Q_SPI_FLASH_RD</span><span class="token punctuation">(</span><span class="token class-name">uint32_t</span> ReadAddr<span class="token punctuation">,</span><span class="token class-name">uint16_t</span> Length_of_data<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">//</span>
+    <span class="token keyword keyword-void">void</span> <span class="token function">Q_SPI_FLASH_WR</span><span class="token punctuation">(</span><span class="token class-name">uint32_t</span> WriteAddr<span class="token punctuation">)</span><span class="token punctuation">;</span>                              <span class="token comment">//</span>
+
+main<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+<span class="token comment">//传几次就死机</span>
+  <span class="token keyword keyword-while">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    <span class="token function">HAL_GPIO_WritePin</span><span class="token punctuation">(</span>GPIOA<span class="token punctuation">,</span> GPIO_PIN_8<span class="token punctuation">,</span> GPIO_PIN_SET<span class="token punctuation">)</span><span class="token punctuation">;</span>      
+    <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token number">7200000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">Q_SPI_FLASH_ReadID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                             		 <span class="token comment">//查看ID</span>
+      
+    <span class="token function">Q_SPI_FLASH_busy_reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                         		 <span class="token comment">//等待Busy位reset</span>
+    <span class="token function">SPI_FLASH_SE</span><span class="token punctuation">(</span><span class="token number">0x001000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                         		 <span class="token comment">//写使能，发送擦除指令的地址  </span>
+      
+    <span class="token function">Q_SPI_FLASH_busy_reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Q_SPI_FLASH_WR</span><span class="token punctuation">(</span><span class="token number">0x001000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                      	   	 <span class="token comment">//写使能，发送页写指令的地址  </span>
+ 
+    <span class="token function">Q_SPI_FLASH_busy_reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">uint8_t</span> readlength<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">;</span>                          	 	 <span class="token comment">//设定要查看的数据大小</span>
+    <span class="token function">Q_SPI_FLASH_RD</span><span class="token punctuation">(</span><span class="token number">0x001000</span><span class="token punctuation">,</span>readlength<span class="token punctuation">)</span><span class="token punctuation">;</span>            	 	 <span class="token comment">//发送读指令，地址</span>
+   <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>readlength<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"0x%02x  "</span><span class="token punctuation">,</span>Read<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">HAL_GPIO_WritePin</span><span class="token punctuation">(</span>GPIOA<span class="token punctuation">,</span> GPIO_PIN_8<span class="token punctuation">,</span> GPIO_PIN_RESET<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token number">7200000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token comment">//    while(--readlength)</span>
+<span class="token comment">//    {   </span>
+<span class="token comment">//        uint8_t *pdata=Read;</span>
+<span class="token comment">//        printf("0x%x  ",*pdata++);</span>
+<span class="token comment">//    }</span>
+
+
+define<span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span>
+ <span class="token keyword keyword-void">void</span> <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token class-name">uint32_t</span> nCount<span class="token punctuation">)</span>                  	  <span class="token comment">//软件延时延时函数</span>
+<span class="token punctuation">{</span>
+  <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span> nCount <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">;</span> nCount<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token class-name">uint8_t</span> <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span><span class="token class-name">uint8_t</span> Data<span class="token punctuation">)</span>              	 <span class="token comment">//发送数据函数，返回值为接收的数据</span>
+<span class="token punctuation">{</span>					                           <span class="token comment">//parameter：需要发送到flash的数据</span>
+    <span class="token class-name">uint8_t</span> Read<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> 
+    <span class="token function">HAL_SPI_TransmitReceive</span><span class="token punctuation">(</span> <span class="token operator">&amp;</span>hspi1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>Data<span class="token punctuation">,</span> <span class="token operator">&amp;</span>Read<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0xFFFF</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-return">return</span> Read<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword keyword-void">void</span> <span class="token function">Q_NSS_PA2_level</span><span class="token punctuation">(</span><span class="token class-name">uint8_t</span> state<span class="token punctuation">)</span>                     <span class="token comment">//CS电平</span>
+<span class="token punctuation">{</span>   					            <span class="token comment">//parameter：0、1</span>
+    <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>state<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token function">HAL_GPIO_WritePin</span><span class="token punctuation">(</span>GPIOA<span class="token punctuation">,</span> GPIO_PIN_2<span class="token punctuation">,</span> GPIO_PIN_RESET<span class="token punctuation">)</span><span class="token punctuation">;</span>       
+    <span class="token keyword keyword-else">else</span>
+        <span class="token function">HAL_GPIO_WritePin</span><span class="token punctuation">(</span>GPIOA<span class="token punctuation">,</span> GPIO_PIN_2<span class="token punctuation">,</span> GPIO_PIN_SET<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword keyword-void">void</span> <span class="token function">Q_SPI_FLASH_busy_reset</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span>                      <span class="token comment">//等待busy位清除</span>
+<span class="token punctuation">{</span>
+  <span class="token class-name">uint8_t</span> FLASH_Status <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token function">Q_NSS_PA2_level</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span>RDSR1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-do">do</span>
+  <span class="token punctuation">{</span>
+  FLASH_Status<span class="token operator">=</span><span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span>DummyByte<span class="token punctuation">)</span><span class="token punctuation">;</span>        
+    <span class="token punctuation">{</span>
+      <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>timeout<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> 
+      <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"无法传输"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword keyword-return">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> 
+  <span class="token punctuation">}</span><span class="token keyword keyword-while">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>FLASH_Status <span class="token operator">&amp;</span> <span class="token number">0x01</span><span class="token punctuation">)</span> <span class="token operator">==</span> SET<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token comment">//SR1 寄存器最后一位为busy位</span>
+  <span class="token function">Q_NSS_PA2_level</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword keyword-void">void</span> <span class="token function">SPI_FLASH_SE</span><span class="token punctuation">(</span><span class="token class-name">uint32_t</span> SectorAddr<span class="token punctuation">)</span>              <span class="token comment">// sector(1*16*256=4096B=4KB) erase   (contain write enable)</span>
+<span class="token punctuation">{</span>
+  <span class="token function">Q_SPI_FLASH_WREN</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">Q_SPI_FLASH_busy_reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">Q_NSS_PA2_level</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span>SE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span><span class="token punctuation">(</span>SectorAddr <span class="token operator">&amp;</span> <span class="token number">0xFF0000</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span><span class="token punctuation">(</span>SectorAddr <span class="token operator">&amp;</span> <span class="token number">0xFF00</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span> SectorAddr <span class="token operator">&amp;</span> <span class="token number">0xFF</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">Q_NSS_PA2_level</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">Q_SPI_FLASH_busy_reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword keyword-void">void</span> <span class="token function">Q_SPI_FLASH_WREN</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span>                          <span class="token comment">//write enable</span>
+<span class="token punctuation">{</span>
+  <span class="token function">Q_NSS_PA2_level</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span>WREN<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">Q_NSS_PA2_level</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword keyword-void">void</span> <span class="token function">Q_SPI_FLASH_ReadID</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span>                       <span class="token comment">//read ID on flash</span>
+    <span class="token punctuation">{</span>
+    <span class="token function">Q_NSS_PA2_level</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span>RDID<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span>ZERO<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span>ZERO<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span>ZERO<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n芯片ID:0x%x"</span><span class="token punctuation">,</span><span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span>ZERO<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%x\n"</span><span class="token punctuation">,</span><span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span>ZERO<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Q_NSS_PA2_level</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+
+<span class="token keyword keyword-void">void</span> <span class="token function">Q_SPI_FLASH_WR</span><span class="token punctuation">(</span><span class="token class-name">uint32_t</span> WriteAddr<span class="token punctuation">)</span>                   <span class="token comment">//write data on flash   (contain  write enable)</span>
+<span class="token punctuation">{</span>					         <span class="token comment">//parameter：需要写入的flash的起始地址，需要读取的数据长度</span>
+    <span class="token function">Q_SPI_FLASH_WREN</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Q_NSS_PA2_level</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span>PP<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span><span class="token punctuation">(</span>WriteAddr <span class="token operator">&amp;</span> <span class="token number">0xFF0000</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span><span class="token punctuation">(</span>WriteAddr <span class="token operator">&amp;</span> <span class="token number">0xFF00</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span> WriteAddr <span class="token operator">&amp;</span> <span class="token number">0xFF</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"发送的数据为："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-for">for</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token keyword keyword-sizeof">sizeof</span><span class="token punctuation">(</span>Send<span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span>Send<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d  "</span><span class="token punctuation">,</span>Send<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Q_NSS_PA2_level</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-void">void</span> <span class="token function">Q_SPI_FLASH_RD</span><span class="token punctuation">(</span><span class="token class-name">uint32_t</span> ReadAddr<span class="token punctuation">,</span><span class="token class-name">uint16_t</span> Length_of_data<span class="token punctuation">)</span>        <span class="token comment">//read data on flash   </span>
+<span class="token punctuation">{</span>							     <span class="token comment">//parameter：需要读取的flash的起始地址，需要读取的数据长度</span>
+  <span class="token function">Q_NSS_PA2_level</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span>RD<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span><span class="token punctuation">(</span>ReadAddr <span class="token operator">&amp;</span> <span class="token number">0xFF0000</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span><span class="token punctuation">(</span>ReadAddr <span class="token operator">&amp;</span> <span class="token number">0xFF00</span><span class="token punctuation">)</span> <span class="token operator">&gt;&gt;</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span> ReadAddr <span class="token operator">&amp;</span> <span class="token number">0xFF</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"收到的数据为："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword keyword-while">while</span> <span class="token punctuation">(</span>Length_of_data<span class="token operator">--</span><span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+    <span class="token operator">*</span>pRead <span class="token operator">=</span> <span class="token function">Q_SPI_1_TR</span><span class="token punctuation">(</span>DummyByte<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pRead<span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+    <span class="token function">Q_NSS_PA2_level</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h4 id="nm25q64手册">NM25Q64手册 </h4>
+<p>根据NM25Q64手册，<br>
+发送指令09H，后接000000H得Manufacturer地址52H，后接000001H得Device地址16H<br>
+实际后接000000H为Manufacturer地址52H，其他值(即不为000000H的值)为Device地址16H</p>
+<p>数据寄存器DR    接收数据寄存器RDR     发送数据寄存器TDR    xx外设控制器CR1</p>
+<ul>
+<li>TXE  空flag(已发送)
+<ul>
+<li>发送缓冲区(即TDR)中的数据为空  TXE=SET   表明数据从TDR中已发送到<strong>位移</strong>寄存器中</li>
+</ul>
+</li>
+<li>RXNE 非空flag(已收到)
+<ul>
+<li>接收缓冲区(即RDR)中的数据不为空  RXNE=SET   表明RDR从<strong>位移</strong>寄存器中接收到数据</li>
+</ul>
+</li>
+<li>TC 发送完成flag
+<ul>
+<li>即TDR和<strong>移位</strong>寄存器中数据都空 TC=SET</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="dating-1">dating... </h2>
+<p>NOR FLASH基本驱动步骤</p>
+<p>SPI配置<br>
+SPI工作参数配置初始化：工作模式、时钟极性、时钟相位，HAL_SPI_Init();<br>
+使能SPI时钟、初始化相关引脚：GPIO设为复用推挽输出，HAL_SPI_MspInit();<br>
+使能SPI：__HAL_SPI_ENABLE();<br>
+SPI传输数据：HAL_SPI_Transmit 发送；HAL_SPI_Receive 接收；HAL_SPI_TransmitReceive 进行发送接收；<br>
+设置SPI传输速度（可选）：操作SPI_CR1寄存器中的波特率（需要先失能SPI，设置完成后再使能）</p>
+<p>NM25Q128驱动<br>
+初始化片选引脚和SPI接口：相关GPIO、SPI；<br>
+NM25Q128读取：0x03+24位地址+读取数据；<br>
+NM25Q128扇区擦除：0x06+等待空闲+0x20+24位地址+等待空闲；擦除大小4096字节；<br>
+NM25Q128写入：擦除扇区（可选）+0x06+0x02+24位地址+写入数据+等待空闲。<br>
+驱动核心在于写数据：需要判断是否需要擦除；写入数据是否需要换页换扇区；遵循读、改、写原则。<br>
+写数据是将磁盘中的1--&gt;0，无法将0--&gt;1，因此要进行擦除，使所有的位都变成1<br>
+一般对于一块新磁盘，没有写入数据前，大部分扇区读取到的数据为1，若读取数据长度为1Byte，则显示数据255/0xFF</p>
+<p>读操作步骤 ：读命令 ，地址 ，读数据(发数据)<br>
+擦除步骤 ：写使能 ，擦除命令 ，地址<br>
+写操作步骤： 写使能，擦除命令 ，写使能 ，写命令 ，地址， 发数据(读数据)<br>
+数据大小不同擦除和写指令不同</p>
+
+      </div>
+      <div class="md-sidebar-toc">
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#spi" class="md-toc-link"><p>SPI</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#dating" class="md-toc-link">
+            <p>dating...</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#dating-1" class="md-toc-link">
+            <p>dating...</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    
+    
+    
+    
+    
+    
+<script>
+document.body.setAttribute('html-show-sidebar-toc', true)
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>

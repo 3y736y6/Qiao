@@ -1,0 +1,198 @@
+STFT和Wavelet特征图分别卷积，特征融合后输入模型
+从1通道卷积至32
+STFT 17，97 >>> 112,224
+Wavelet 128,1536 >>> 112,224
+
+
+
+(deeplearning) PS C:\Users\Q\Desktop\resnet_30hz_WT> & C:/Users/Q/anaconda3/envs/deeplearning/python.exe c:/Users/Q/Desktop/resnet_30hz_WT/A2_fusion_model/resnet50_vib_train_test2.py
+2025-02-13 16:07:24.685815: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-02-13 16:07:25.240386: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+当前日期和时间: 2025-02-13 16:07:26.323566
+  1_using cuda:0 device.
+查看dataset 单条数据
+  sample1 shape:((17, 97), <class 'numpy.ndarray'>) , Label:(1, <class 'numpy.int64'>)
+  total data:5000,epochs:20,batch_size:32
+  1 epoch has 157 steps
+查看train_loader 容器数据
+  total data 4000
+  batch_size: 32
+  Number of batches: 125
+  type of batches: <class 'torch.utils.data.dataloader.DataLoader'>
+input shape: torch.Size([32, 1, 17, 97])
+input type: torch.FloatTensor
+lable shape: torch.Size([32])
+lable type: torch.LongTensor
+
+tensor([4, 2, 1, 2, 5, 1, 4, 4, 4, 3, 5, 2, 3, 3, 2, 2, 5, 5, 2, 2, 3, 1, 2, 4,
+        4, 4, 5, 1, 5, 1, 5, 3])
+查看dataset 单条数据
+  sample1 shape:((128, 1536), <class 'numpy.ndarray'>) , Label:(1, <class 'numpy.int64'>)
+  total data:5000,epochs:20,batch_size:32
+  1 epoch has 157 steps
+查看train_loader 容器数据
+  total data 4000
+  batch_size: 32
+  Number of batches: 125
+  type of batches: <class 'torch.utils.data.dataloader.DataLoader'>
+input shape: torch.Size([32, 1, 128, 1536])
+input type: torch.FloatTensor
+lable shape: torch.Size([32])
+lable type: torch.LongTensor
+tensor([4, 2, 1, 2, 5, 1, 4, 4, 4, 3, 5, 2, 3, 3, 2, 2, 5, 5, 2, 2, 3, 1, 2, 4,
+        4, 4, 5, 1, 5, 1, 5, 3])
+自定义模型
+++++++   start train  ++++++
++++++++  ----------  +++++++
+[1 epoch, 41 step]:
+accuracy: 0.6684451219512195 , loss: 0.7673145278197963
+[1 epoch, 82 step]:
+accuracy: 0.913109756097561 , loss: 0.2522471866956571
+[1 epoch, 123 step]:
+accuracy: 0.96875 , loss: 0.10793281991670771
+---------------- current_learn_rate ----------------- : 0.000100000000000
+[2 epoch, 41 step]:
+accuracy: 0.9832848837209303 , loss: 0.049392394619289695
+[2 epoch, 82 step]:
+accuracy: 0.9855182926829268 , loss: 0.043316549099073176
+[2 epoch, 123 step]:
+accuracy: 0.9870426829268293 , loss: 0.04127140311387981
+---------------- current_learn_rate ----------------- : 0.000100000000000
+[3 epoch, 41 step]:
+accuracy: 0.9956395348837209 , loss: 0.020485619168228855
+[3 epoch, 82 step]:
+accuracy: 0.9984756097560976 , loss: 0.009396203955430992
+[3 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.006490207542722091
+---------------- current_learn_rate ----------------- : 0.000100000000000
+[4 epoch, 41 step]:
+accuracy: 0.9992732558139535 , loss: 0.006337771302929557
+[4 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.0034571172046282033
+[4 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.0025881938927341253
+---------------- current_learn_rate ----------------- : 0.000100000000000
+[5 epoch, 41 step]:
+accuracy: 1.0 , loss: 0.0024590145025640817
+[5 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.0012438855941049618
+[5 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.00111170576902379
+---------------- current_learn_rate ----------------- : 0.000100000000000
+[6 epoch, 41 step]:
+accuracy: 1.0 , loss: 0.0010289248475157543
+[6 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.0007380442573155118
+[6 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.0007177658610488856
+---------------- current_learn_rate ----------------- : 0.000100000000000
+[7 epoch, 41 step]:
+accuracy: 1.0 , loss: 0.0007409852643343961
+[7 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.0005632973605803805
+[7 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.0005557311485129659
+---------------- current_learn_rate ----------------- : 0.000100000000000
+[8 epoch, 41 step]:
+accuracy: 1.0 , loss: 0.0005883900588875205
+[8 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.0004503506034535992
+[8 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.0004496338728264474
+---------------- current_learn_rate ----------------- : 0.000100000000000
+[9 epoch, 41 step]:
+accuracy: 1.0 , loss: 0.00048243071796605363
+[9 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.00037022561942959747
+[9 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.00037389663960245187
+---------------- current_learn_rate ----------------- : 0.000100000000000
+[10 epoch, 41 step]:
+accuracy: 1.0 , loss: 0.00040440085037361556
+[10 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.00031047992595675876
+[10 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.00031649255798561727
+---------------- current_learn_rate ----------------- : 0.000100000000000
+[11 epoch, 41 step]:
+accuracy: 1.0 , loss: 0.0003441624088204329
+[11 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.00026436800748697573
+[11 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.0002716864095773639
+---------------- current_learn_rate ----------------- : 0.000100000000000
+[12 epoch, 41 step]:
+accuracy: 1.0 , loss: 0.0002963478847693584
+[12 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.00022785870293396662
+[12 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.00023589186466557382
+---------------- current_learn_rate ----------------- : 0.000100000000000
+[13 epoch, 41 step]:
+accuracy: 1.0 , loss: 0.00026105578164300293
+[13 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.0002002314729729622
+[13 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.00021336886937028683
+---------------- current_learn_rate ----------------- : 0.000010000000000
+[14 epoch, 41 step]:
+accuracy: 1.0 , loss: 0.0002558970002765574
+[14 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.00019665249082452912
+[14 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.00021097041595877694
+---------------- current_learn_rate ----------------- : 0.000010000000000
+[15 epoch, 41 step]:
+accuracy: 1.0 , loss: 0.000251241722896627
+[15 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.00019350529603288146
+[15 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.00020842188145829048
+---------------- current_learn_rate ----------------- : 0.000010000000000
+[16 epoch, 41 step]:
+accuracy: 1.0 , loss: 0.00024679384029984314
+[16 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.00019042200881635725
+[16 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.00020565160709183392
+---------------- current_learn_rate ----------------- : 0.000010000000000
+[17 epoch, 41 step]:
+accuracy: 1.0 , loss: 0.00024235431564880944
+[17 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.0001873285720826172
+[17 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.00020263715540328654
+---------------- current_learn_rate ----------------- : 0.000010000000000
+[18 epoch, 41 step]:
+accuracy: 1.0 , loss: 0.00023797411445340867
+[18 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.00018415889990581314
+[18 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.00019944404319664123
+---------------- current_learn_rate ----------------- : 0.000010000000000
+[19 epoch, 41 step]:
+accuracy: 1.0 , loss: 0.00023350378605977224
+[19 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.00018093259265098335
+[19 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.00019605077454243878
+---------------- current_learn_rate ----------------- : 0.000010000000000
+[20 epoch, 41 step]:
+accuracy: 1.0 , loss: 0.0002289963292530113
+[20 epoch, 82 step]:
+accuracy: 1.0 , loss: 0.00017759929252816818
+[20 epoch, 123 step]:
+accuracy: 1.0 , loss: 0.00019253900760171435
+---------------- current_learn_rate ----------------- : 0.000010000000000
+total_time:3.177966252962748min
+Finished Training
+++++++++  start test  +++++++
+++++++++  ----------  +++++++
+Accuracy of the network on the 1000/1000 tests: 100.00%
+[188.0, 207.0, 190.0, 201.0, 215.0]
+
+Accuracy of normal : 100.00 %
+Accuracy of broken : 100.00 %
+Accuracy of missing_tooth : 100.00 %
+Accuracy of root_crack : 100.00 %
+Accuracy of  wear : 100.00 %

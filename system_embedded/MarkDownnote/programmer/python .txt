@@ -1,0 +1,19 @@
+python中一行只能执行一个操作
+syntax error 语法错误  invalid syntax  无效的语法
+indentation error  缩进错误 unexpected indent
+python命令不支持中文-->python编译器支持中文
+python3命令支持中文-->python3编译器支持中文
+python3不兼容python2，过度版本python2.6
+
+解释器：CPython  ( 官方版本c语言实现)         Jython (JAVA实现) 
+ IronPython (运行在.NET和Mono平台)        PyPy(python实现，支持JIT即时编译)
+
+交互式执行：输出python命令-->之后的操作进行在python环境中(解释器中)，直接输入代码即可显示结果
+而不用( python 代码/文件名)
+优点：学习验证局部代码
+缺点：代码不能保存
+>>> exit（）  linux：Ctrl+d     windows：Ctrl+z
+
+交互式shell--IPython   交互Interactive     ipython  ipython3   exti/ Crtl+d退出
+bashshell  -- linux命令
+IDE integrated development environment	集成开发环境  PyCharm

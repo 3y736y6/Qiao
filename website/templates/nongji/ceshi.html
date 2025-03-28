@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+
+<head>
+  <meta charset="utf-8">
+  <title>Temperature and Vibration Data</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+</head>
+
+<body style="height: 100%; margin: 0">
+  <div id="chart1" style="height: 40%; width: 100%"></div>
+  <div id="chart2" style="height: 40%; width: 100%"></div>
+  <div id="dataTable" style="height: 20%; width: 100%; overflow: auto;"></div>
+  <script type="text/javascript">
+    fetch('/data01.txt')
+      .then(response => response.text())
+      .then(data => {
+        console.log('Raw data:', data);
+
+        const lines = data.trim().split('\n');
+        console.log('Lines:', lines);
+
+        const chartData = lines.map(line => {
+          console.log('Line:', line);
+
+          const matches = line.match(/data1=(\d+)\s+mV\s+data2=(0x[0-9a-fA-F]+)/);
+          console.log('Matches:', matches);
+
+          if (matches) {
+            const temperature = parseInt(matches[1]);
+            console.log('Temperature:', temperature);
+
+            const vibration = matches[2];
+            console.log('Vibration:', vibration);
+
+            return [temperature, vibration];
+          }
+
+          return [null, null];
+        });
+
+
+
+
+        const dateList = Array.from({
+          length: chartData.length
+        }, (_, i) => i + 1);
+
+        // Chart 1: Temperature vs Time
+        const chart1 = echarts.init(document.getElementById('chart1'));
+        const option1 = {
+          toolbox: {
+            show: true, // 显示工具栏
+            feature: {
+              saveAsImage: {}, // 保存为图片按钮
+              restore: {}, // 还原按钮
+              dataView: {}, // 数据视图按钮
+              magicType: {} // 切换图表类型按钮
+            }
+          },
+          dataZoom: [ // 添加dataZoom配置
+            {
+              type: 'inside', // 内置的数据区域缩放
+              start: 0,
+              end: 100
+            },
+            {
+              type: 'slider', // 滑动条数据区域缩放
+              start: 0,
+              end: 100
+            }
+          ],
+          visualMap: {
+            show: false,
+            type: 'continuous',
+            seriesIndex: 0,
+            dimension: 0,
+            min: 0,
+            max: dateList.length - 1
+          },
+          title: {
+            left: 'center',
+            text: 'Temperature vs Time'
+          },
+          tooltip: {
+            trigger: 'axis'
+          },
+          xAxis: {
+            data: dateList
+          },
+          yAxis: {
+            name: 'Temperature (mV)'
+          },
+          series: [{
+            type: 'line',
+            showSymbol: false,
+            data: chartData.map(item => item[0])
+          }]
+        };
+        chart1.setOption(option1);
+
+        // Chart 2: Vibration vs Time
+        const chart2 = echarts.init(document.getElementById('chart2'));
+        const option2 = {
+          toolbox: {
+            show: true, // 显示工具栏
+            feature: {
+              saveAsImage: {}, // 保存为图片按钮
+              restore: {}, // 还原按钮
+              dataView: {}, // 数据视图按钮
+              magicType: {} // 切换图表类型按钮
+            }
+          },
+          dataZoom: [{
+              type: 'inside',
+              start: 0,
+              end: 100
+            },
+            {
+              type: 'slider',
+              start: 0,
+              end: 100
+            }
+          ],
+          visualMap: {
+            show: false,
+            type: 'continuous',
+            seriesIndex: 0,
+            dimension: 0,
+            min: 0,
+            max: dateList.length - 1
+          },
+          title: {
+            left: 'center',
+            text: 'Vibration vs Time'
+          },
+          tooltip: {
+            trigger: 'axis',
+            formatter: function (params) {
+              const value = params[0].data;
+              console.log('params:', params);
+              console.log('Vibration value:', value);
+              const matches = value.match(/0x[0-9a-fA-F]+/);
+              console.log('matches', matches);
+              if (matches) {
+                const decimalValue = parseInt(matches[0], 16);
+                return `Time: ${params[0].axisValue}<br/>Vibration: ${decimalValue}`;
+              } else {
+                return `Time: ${params[0].axisValue}<br/>Vibration: ${value}`;
+              }
+            }
+          },
+          xAxis: {
+            data: dateList
+          },
+          yAxis: {
+            name: 'Vibration',
+            type: 'value'
+          },
+          series: [{
+            type: 'line',
+            showSymbol: false,
+            data: chartData.map(item => item[1])
+          }]
+        };
+        chart2.setOption(option2);
+      });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+torch.Size([16, 3, 224, 224])
+torch.Size([16, 64, 112, 112])
+torch.Size([16, 64, 112, 112])
+torch.Size([16, 64, 112, 112])
+torch.Size([16, 64, 56, 56])
+torch.Size([16, 256, 56, 56])
+torch.Size([16, 512, 28, 28])
+torch.Size([16, 1024, 14, 14])
+torch.Size([16, 2048, 7, 7])
+torch.Size([16, 2048, 1, 1])
+torch.Size([16, 2048])
+torch.Size([16, 5])
+torch.Size([16, 5])\
+
+
+当前日期和时间: 2024-12-24 21:29:37.653067
+1_using cuda:0 device.
+3_using 3306 images for training, 364 images for test.
+input size: torch.Size([64, 3, 224, 224])
+start train
+[1 epoch, 17 step] loss: 1.8661392155815573
+[1 epoch, 17 strp] accuracy: 0.36121323529411764
+[1 epoch, 34 step] loss: 1.2770851745324976
+[1 epoch, 34 strp] accuracy: 0.47794117647058826
+[1 epoch, 51 step] loss: 1.2027785848168766
+[1 epoch, 51 strp] accuracy: 0.5174632352941176
+current_learn_rate : 0.001000000000000
+[2 epoch, 17 step] loss: 1.1654714766670675
+[2 epoch, 17 strp] accuracy: 0.5469026548672566
+[2 epoch, 34 step] loss: 1.2082478789722217
+[2 epoch, 34 strp] accuracy: 0.5202205882352942
+[2 epoch, 51 step] loss: 1.2140970510594986
+[2 epoch, 51 strp] accuracy: 0.5542279411764706
+current_learn_rate : 0.001000000000000
+[3 epoch, 17 step] loss: 1.203850507736206
+[3 epoch, 17 strp] accuracy: 0.5433628318584071
+[3 epoch, 34 step] loss: 1.0623177991193884
+[3 epoch, 34 strp] accuracy: 0.6075367647058824
+[3 epoch, 51 step] loss: 1.0059589568306417
+[3 epoch, 51 strp] accuracy: 0.5974264705882353
+current_learn_rate : 0.001000000000000
+[4 epoch, 17 step] loss: 1.0567451259669136
+[4 epoch, 17 strp] accuracy: 0.5725663716814159
+[4 epoch, 34 step] loss: 1.0719270916546093
+[4 epoch, 34 strp] accuracy: 0.5873161764705882
+[4 epoch, 51 step] loss: 0.9986529210034538
+[4 epoch, 51 strp] accuracy: 0.6387867647058824
+current_learn_rate : 0.001000000000000
+[5 epoch, 17 step] loss: 1.0039406979785246
+[5 epoch, 17 strp] accuracy: 0.6141592920353982
+[5 epoch, 34 step] loss: 0.9136214361471289
+[5 epoch, 34 strp] accuracy: 0.6470588235294118
+[5 epoch, 51 step] loss: 0.9671294794363134
+[5 epoch, 51 strp] accuracy: 0.6571691176470589
+current_learn_rate : 0.001000000000000
+[6 epoch, 17 step] loss: 0.9233901150086347
+[6 epoch, 17 strp] accuracy: 0.6530973451327433
+[6 epoch, 34 step] loss: 0.9040441232569078
+[6 epoch, 34 strp] accuracy: 0.6636029411764706
+[6 epoch, 51 step] loss: 0.9840687618536108
+[6 epoch, 51 strp] accuracy: 0.6351102941176471
+current_learn_rate : 0.001000000000000
+[7 epoch, 17 step] loss: 0.9676429979941424
+[7 epoch, 17 strp] accuracy: 0.6380530973451327
+[7 epoch, 34 step] loss: 0.9841679580071393
+[7 epoch, 34 strp] accuracy: 0.6112132352941176
+[7 epoch, 51 step] loss: 0.9382987232769237
+[7 epoch, 51 strp] accuracy: 0.6443014705882353
+current_learn_rate : 0.001000000000000
+[8 epoch, 17 step] loss: 0.9153194076874677
+[8 epoch, 17 strp] accuracy: 0.6566371681415929
+[8 epoch, 34 step] loss: 0.8892322778701782
+[8 epoch, 34 strp] accuracy: 0.6755514705882353
+[8 epoch, 51 step] loss: 0.9491214401581708
+[8 epoch, 51 strp] accuracy: 0.6443014705882353
+current_learn_rate : 0.001000000000000
+[9 epoch, 17 step] loss: 0.8569046609541949
+[9 epoch, 17 strp] accuracy: 0.6831858407079646
+[9 epoch, 34 step] loss: 0.8781190163948956
+[9 epoch, 34 strp] accuracy: 0.6672794117647058
+[9 epoch, 51 step] loss: 0.8799525920082542
+[9 epoch, 51 strp] accuracy: 0.6737132352941176
+current_learn_rate : 0.001000000000000
+[10 epoch, 17 step] loss: 0.8067432606921476
+[10 epoch, 17 strp] accuracy: 0.6991150442477876
+[10 epoch, 34 step] loss: 0.8108970417695887
+[10 epoch, 34 strp] accuracy: 0.6985294117647058
+[10 epoch, 51 step] loss: 0.7778517884366652
+[10 epoch, 51 strp] accuracy: 0.7058823529411765
+current_learn_rate : 0.001000000000000
+[11 epoch, 17 step] loss: 0.8152578823706683
+[11 epoch, 17 strp] accuracy: 0.6964601769911505
+[11 epoch, 34 step] loss: 0.8812125114833608
+[11 epoch, 34 strp] accuracy: 0.6608455882352942
+[11 epoch, 51 step] loss: 0.8105165432481205
+[11 epoch, 51 strp] accuracy: 0.6902573529411765
+current_learn_rate : 0.001000000000000
+[12 epoch, 17 step] loss: 0.790315189782311
+[12 epoch, 17 strp] accuracy: 0.7044247787610619
+[12 epoch, 34 step] loss: 0.7876583022229812
+[12 epoch, 34 strp] accuracy: 0.7104779411764706
+[12 epoch, 51 step] loss: 0.7805768952650183
+[12 epoch, 51 strp] accuracy: 0.7058823529411765
+current_learn_rate : 0.001000000000000
+[13 epoch, 17 step] loss: 0.712065297014573
+[13 epoch, 17 strp] accuracy: 0.7238938053097345
+[13 epoch, 34 step] loss: 0.6641550993218142
+[13 epoch, 34 strp] accuracy: 0.7619485294117647
+[13 epoch, 51 step] loss: 0.6819456324857824
+[13 epoch, 51 strp] accuracy: 0.7362132352941176
+current_learn_rate : 0.000100000000000
+[14 epoch, 17 step] loss: 0.6331150426584131
+[14 epoch, 17 strp] accuracy: 0.7530973451327434
+[14 epoch, 34 step] loss: 0.6620593088514665
+[14 epoch, 34 strp] accuracy: 0.7729779411764706
+[14 epoch, 51 step] loss: 0.6733359010780559
+[14 epoch, 51 strp] accuracy: 0.7463235294117647
+current_learn_rate : 0.000100000000000
+[15 epoch, 17 step] loss: 0.6242116549435783
+[15 epoch, 17 strp] accuracy: 0.779646017699115
+[15 epoch, 34 step] loss: 0.617411171688753
+[15 epoch, 34 strp] accuracy: 0.7729779411764706
+[15 epoch, 51 step] loss: 0.69783094700645
+[15 epoch, 51 strp] accuracy: 0.7398897058823529
+current_learn_rate : 0.000100000000000
+[16 epoch, 17 step] loss: 0.6277817172162673
+[16 epoch, 17 strp] accuracy: 0.763716814159292
+[16 epoch, 34 step] loss: 0.612067278693704
+[16 epoch, 34 strp] accuracy: 0.7729779411764706
+[16 epoch, 51 step] loss: 0.6313220735858468
+[16 epoch, 51 strp] accuracy: 0.7628676470588235
+current_learn_rate : 0.000100000000000
+[17 epoch, 17 step] loss: 0.6139236741206225
+[17 epoch, 17 strp] accuracy: 0.7778761061946903
+[17 epoch, 34 step] loss: 0.6163091624484343
+[17 epoch, 34 strp] accuracy: 0.7610294117647058
+[17 epoch, 51 step] loss: 0.619547097121968
+[17 epoch, 51 strp] accuracy: 0.7803308823529411
+current_learn_rate : 0.000100000000000
+[18 epoch, 17 step] loss: 0.5883254251059364
+[18 epoch, 17 strp] accuracy: 0.7867256637168142
+[18 epoch, 34 step] loss: 0.5913600027561188
+[18 epoch, 34 strp] accuracy: 0.7784926470588235
+[18 epoch, 51 step] loss: 0.609426992781022
+[18 epoch, 51 strp] accuracy: 0.7775735294117647
+current_learn_rate : 0.000100000000000
+[19 epoch, 17 step] loss: 0.5846367723801557
+[19 epoch, 17 strp] accuracy: 0.7823008849557522
+[19 epoch, 34 step] loss: 0.5766987292205586
+[19 epoch, 34 strp] accuracy: 0.7849264705882353
+[19 epoch, 51 step] loss: 0.5919061951777514
+[19 epoch, 51 strp] accuracy: 0.7738970588235294
+current_learn_rate : 0.000100000000000
+[20 epoch, 17 step] loss: 0.57402104139328
+[20 epoch, 17 strp] accuracy: 0.7716814159292036
+[20 epoch, 34 step] loss: 0.5494640294243308
+[20 epoch, 34 strp] accuracy: 0.8023897058823529
+[20 epoch, 51 step] loss: 0.5871575895477744
+[20 epoch, 51 strp] accuracy: 0.7849264705882353
+current_learn_rate : 0.000100000000000
+[21 epoch, 17 step] loss: 0.5978492568520939
+[21 epoch, 17 strp] accuracy: 0.7752212389380531
+[21 epoch, 34 step] loss: 0.5646103234852061
+[21 epoch, 34 strp] accuracy: 0.7922794117647058
+[21 epoch, 51 step] loss: 0.5831852397497963
+[21 epoch, 51 strp] accuracy: 0.7931985294117647
+current_learn_rate : 0.000100000000000
+[22 epoch, 17 step] loss: 0.613632882342619
+[22 epoch, 17 strp] accuracy: 0.7787610619469026
+[22 epoch, 34 step] loss: 0.5683482359437382
+[22 epoch, 34 strp] accuracy: 0.7895220588235294
+[22 epoch, 51 step] loss: 0.529948551865185
+[22 epoch, 51 strp] accuracy: 0.7959558823529411
+current_learn_rate : 0.000100000000000
+[23 epoch, 17 step] loss: 0.5724184881238377
+[23 epoch, 17 strp] accuracy: 0.7867256637168142
+[23 epoch, 34 step] loss: 0.5585800672278685
+[23 epoch, 34 strp] accuracy: 0.7913602941176471
+[23 epoch, 51 step] loss: 0.5337521854568931
+[23 epoch, 51 strp] accuracy: 0.8079044117647058
+current_learn_rate : 0.000100000000000
+[24 epoch, 17 step] loss: 0.5187311260139241
+[24 epoch, 17 strp] accuracy: 0.804424778761062
+[24 epoch, 34 step] loss: 0.5708575161064372
+[24 epoch, 34 strp] accuracy: 0.7941176470588235
+[24 epoch, 51 step] loss: 0.5467109259437112
+[24 epoch, 51 strp] accuracy: 0.8023897058823529
+current_learn_rate : 0.000010000000000
+[25 epoch, 17 step] loss: 0.5219640416257522
+[25 epoch, 17 strp] accuracy: 0.8115044247787611
+[25 epoch, 34 step] loss: 0.5227542519569397
+[25 epoch, 34 strp] accuracy: 0.8143382352941176
+[25 epoch, 51 step] loss: 0.5128216796061572
+[25 epoch, 51 strp] accuracy: 0.8115808823529411
+current_learn_rate : 0.000010000000000
+total_time:6.831411778926849min
+++++++++  start test  +++++++
+++++++++  ----------  +++++++
+Accuracy of the network on the 293/364 tests: 80.49 %
+[63.0, 89.0, 64.0, 69.0, 79.0]
+
+Accuracy of     A : 80.95 %
+Accuracy of     B : 85.39 %
+Accuracy of     C : 73.44 %
+Accuracy of     D : 88.41 %
+Accuracy of     E : 73.42 %

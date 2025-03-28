@@ -1,0 +1,284 @@
+(deeplearning) PS C:\Users\Q\Desktop\paper\paper\2024_11_SCI\experiments\One_dimsion\3ResNet> & C:/Users/Q/anaconda3/envs/deeplearning/python.exe c:/Users/Q/Desktop/paper/paper/2024_11_SCI/experiments/One_dimsion/3ResNet/ResNet50_1D_CH1_Train1.py
+2025-02-16 20:42:27.724090: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-02-16 20:42:28.184733: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+当前日期和时间: 2025-02-16 20:42:29.291519
+torch.Size([32, 1, 1645])
+--------Train_Model--------
+[1 epoch, 50 number] loss: 1.7788681387901306
+[1 epoch, 50 number] accuracy: 0.479375
+[1 epoch, 100 number] loss: 0.8920484578609467
+[1 epoch, 100 number] accuracy: 0.62875
+learn_rate : 0.001000000000000
+[2 epoch, 50 number] loss: 0.4728760951757431
+[2 epoch, 50 number] accuracy: 0.7942307692307692
+[2 epoch, 100 number] loss: 0.2679881490767002
+[2 epoch, 100 number] accuracy: 0.90625
+learn_rate : 0.001000000000000
+[3 epoch, 50 number] loss: 0.2712345641851425
+[3 epoch, 50 number] accuracy: 0.8992307692307693
+[3 epoch, 100 number] loss: 0.3117595469579101
+[3 epoch, 100 number] accuracy: 0.89625
+learn_rate : 0.001000000000000
+[4 epoch, 50 number] loss: 0.31887676488608124
+[4 epoch, 50 number] accuracy: 0.8896153846153846
+[4 epoch, 100 number] loss: 0.19222726714331656
+[4 epoch, 100 number] accuracy: 0.935625
+learn_rate : 0.001000000000000
+[5 epoch, 50 number] loss: 0.38045976832509043
+[5 epoch, 50 number] accuracy: 0.9057692307692308
+[5 epoch, 100 number] loss: 0.1815788970142603
+[5 epoch, 100 number] accuracy: 0.934375
+learn_rate : 0.001000000000000
+[6 epoch, 50 number] loss: 0.5242855196725578
+[6 epoch, 50 number] accuracy: 0.9146153846153846
+[6 epoch, 100 number] loss: 0.604506957307458
+[6 epoch, 100 number] accuracy: 0.854375
+learn_rate : 0.001000000000000
+[7 epoch, 50 number] loss: 0.24791439462453127
+[7 epoch, 50 number] accuracy: 0.938076923076923
+[7 epoch, 100 number] loss: 0.07001535789342597
+[7 epoch, 100 number] accuracy: 0.97625
+learn_rate : 0.001000000000000
+[8 epoch, 50 number] loss: 0.04783433422911912
+[8 epoch, 50 number] accuracy: 0.9746153846153847
+[8 epoch, 100 number] loss: 0.026449624449014664
+[8 epoch, 100 number] accuracy: 0.994375
+learn_rate : 0.000100000000000
+[9 epoch, 50 number] loss: 0.025072993505746127
+[9 epoch, 50 number] accuracy: 0.9888461538461538
+[9 epoch, 100 number] loss: 0.01748508607968688
+[9 epoch, 100 number] accuracy: 0.99625
+learn_rate : 0.000100000000000
+[10 epoch, 50 number] loss: 0.029396431831410153
+[10 epoch, 50 number] accuracy: 0.9911538461538462
+[10 epoch, 100 number] loss: 0.01946738400787581
+[10 epoch, 100 number] accuracy: 0.994375
+learn_rate : 0.000100000000000
+[11 epoch, 50 number] loss: 0.010429956979933194
+[11 epoch, 50 number] accuracy: 0.9965384615384615
+[11 epoch, 100 number] loss: 0.013715055290958844
+[11 epoch, 100 number] accuracy: 0.9975
+learn_rate : 0.000100000000000
+[12 epoch, 50 number] loss: 0.015179672717931681
+[12 epoch, 50 number] accuracy: 0.995
+[12 epoch, 100 number] loss: 0.0202810688741738
+[12 epoch, 100 number] accuracy: 0.99375
+learn_rate : 0.000100000000000
+[13 epoch, 50 number] loss: 0.011413759212009609
+[13 epoch, 50 number] accuracy: 0.9980769230769231
+[13 epoch, 100 number] loss: 0.018085892573581078
+[13 epoch, 100 number] accuracy: 0.995
+learn_rate : 0.000100000000000
+[14 epoch, 50 number] loss: 0.006951492553926073
+[14 epoch, 50 number] accuracy: 0.9973076923076923
+[14 epoch, 100 number] loss: 0.008527995056356303
+[14 epoch, 100 number] accuracy: 0.996875
+learn_rate : 0.000010000000000
+[15 epoch, 50 number] loss: 0.009704895764298272
+[15 epoch, 50 number] accuracy: 0.9980769230769231
+[15 epoch, 100 number] loss: 0.008283351105637849
+[15 epoch, 100 number] accuracy: 0.9975
+learn_rate : 0.000010000000000
+[16 epoch, 50 number] loss: 0.013393434869358315
+[16 epoch, 50 number] accuracy: 0.9969230769230769
+[16 epoch, 100 number] loss: 0.005583726507029496
+[16 epoch, 100 number] accuracy: 0.999375
+learn_rate : 0.000010000000000
+[17 epoch, 50 number] loss: 0.007343758312636055
+[17 epoch, 50 number] accuracy: 0.9988461538461538
+[17 epoch, 100 number] loss: 0.012268163542612455
+[17 epoch, 100 number] accuracy: 0.99625
+learn_rate : 0.000010000000000
+[18 epoch, 50 number] loss: 0.007507136534259189
+[18 epoch, 50 number] accuracy: 0.9976923076923077
+[18 epoch, 100 number] loss: 0.012052570673404261
+[18 epoch, 100 number] accuracy: 0.996875
+learn_rate : 0.000010000000000
+[19 epoch, 50 number] loss: 0.007663289217744023
+[19 epoch, 50 number] accuracy: 0.9984615384615385
+[19 epoch, 100 number] loss: 0.009078260899987072
+[19 epoch, 100 number] accuracy: 0.998125
+learn_rate : 0.000010000000000
+[20 epoch, 50 number] loss: 0.011087971568631474
+[20 epoch, 50 number] accuracy: 0.9969230769230769
+[20 epoch, 100 number] loss: 0.006849492058972828
+[20 epoch, 100 number] accuracy: 1.0
+learn_rate : 0.000001000000000
+ResNet_time:1.4189494013786317min
+Accuracy of the network on the 1798/1800 tests: 99.89 %
+[318.0, 297.0, 312.0, 301.0, 271.0, 301.0]
+
+Accuracy of normal : 99.69 %
+Accuracy of eccentric : 100.00 %
+Accuracy of broken_tooth : 100.00 %
+Accuracy of half_broken_tooth : 99.67 %
+Accuracy of surface_wearing : 100.00 %
+Accuracy of crack : 100.00 %
+(deeplearning) PS C:\Users\Q\Desktop\paper\paper\2024_11_SCI\experiments\One_dimsion\3ResNet> & C:/Users/Q/anaconda3/envs/deeplearning/python.exe c:/Users/Q/Desktop/paper/paper/2024_11_SCI/experiments/One_dimsion/3ResNet/ResNet50_1D_CH1_Train1.py
+2025-02-16 20:44:09.675507: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-02-16 20:44:10.200250: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+当前日期和时间: 2025-02-16 20:44:11.470672
+torch.Size([32, 1, 1645])
+--------Train_Model--------
+[1 epoch, 50 number] loss: 1.781934105157852
+[1 epoch, 50 number] accuracy: 0.4875
+[1 epoch, 100 number] loss: 1.0228484714031219
+[1 epoch, 100 number] accuracy: 0.591875
+learn_rate : 0.001000000000000
+[2 epoch, 50 number] loss: 0.4986742478609085
+[2 epoch, 50 number] accuracy: 0.7942307692307692
+[2 epoch, 100 number] loss: 0.3649669219553471
+[2 epoch, 100 number] accuracy: 0.875625
+learn_rate : 0.001000000000000
+[3 epoch, 50 number] loss: 0.5126146604120732
+[3 epoch, 50 number] accuracy: 0.8430769230769231
+[3 epoch, 100 number] loss: 0.3084057155251503
+[3 epoch, 100 number] accuracy: 0.899375
+learn_rate : 0.001000000000000
+[4 epoch, 50 number] loss: 0.2362911554425955
+[4 epoch, 50 number] accuracy: 0.9261538461538461
+[4 epoch, 100 number] loss: 0.12269044807180762
+[4 epoch, 100 number] accuracy: 0.953125
+learn_rate : 0.001000000000000
+[5 epoch, 50 number] loss: 0.33049219004809854
+[5 epoch, 50 number] accuracy: 0.9246153846153846
+[5 epoch, 100 number] loss: 0.17388986396137626
+[5 epoch, 100 number] accuracy: 0.94375
+learn_rate : 0.001000000000000
+[6 epoch, 50 number] loss: 0.11548724425025285
+[6 epoch, 50 number] accuracy: 0.9523076923076923
+[6 epoch, 100 number] loss: 0.12010002983966843
+[6 epoch, 100 number] accuracy: 0.959375
+learn_rate : 0.001000000000000
+[7 epoch, 50 number] loss: 0.43608834862709045
+[7 epoch, 50 number] accuracy: 0.9161538461538462
+[7 epoch, 100 number] loss: 0.22428101101890208
+[7 epoch, 100 number] accuracy: 0.920625
+learn_rate : 0.001000000000000
+[8 epoch, 50 number] loss: 0.06873494621366262
+[8 epoch, 50 number] accuracy: 0.9769230769230769
+[8 epoch, 100 number] loss: 0.022871521329507233
+[8 epoch, 100 number] accuracy: 0.99375
+learn_rate : 0.000100000000000
+[9 epoch, 50 number] loss: 0.02109687384101562
+[9 epoch, 50 number] accuracy: 0.9926923076923077
+[9 epoch, 100 number] loss: 0.011128883430501446
+[9 epoch, 100 number] accuracy: 0.9975
+learn_rate : 0.000100000000000
+[10 epoch, 50 number] loss: 0.028065356751903893
+[10 epoch, 50 number] accuracy: 0.9934615384615385
+[10 epoch, 100 number] loss: 0.0174532534845639
+[10 epoch, 100 number] accuracy: 0.99375
+learn_rate : 0.000100000000000
+[11 epoch, 50 number] loss: 0.009347675683675333
+[11 epoch, 50 number] accuracy: 0.9953846153846154
+[11 epoch, 100 number] loss: 0.008546933349571191
+[11 epoch, 100 number] accuracy: 0.998125
+learn_rate : 0.000100000000000
+[12 epoch, 50 number] loss: 0.01709252861677669
+[12 epoch, 50 number] accuracy: 0.9946153846153846
+[12 epoch, 100 number] loss: 0.011370107290567831
+[12 epoch, 100 number] accuracy: 0.998125
+learn_rate : 0.000100000000000
+[13 epoch, 50 number] loss: 0.011605615149019286
+[13 epoch, 50 number] accuracy: 0.9976923076923077
+[13 epoch, 100 number] loss: 0.011791012559842783
+[13 epoch, 100 number] accuracy: 0.996875
+learn_rate : 0.000100000000000
+[14 epoch, 50 number] loss: 0.006340772059047595
+[14 epoch, 50 number] accuracy: 0.9984615384615385
+[14 epoch, 100 number] loss: 0.0055854117276612665
+[14 epoch, 100 number] accuracy: 0.99875
+learn_rate : 0.000010000000000
+[15 epoch, 50 number] loss: 0.00759248188813217
+[15 epoch, 50 number] accuracy: 0.9984615384615385
+[15 epoch, 100 number] loss: 0.005588343057897873
+[15 epoch, 100 number] accuracy: 0.999375
+learn_rate : 0.000010000000000
+[16 epoch, 50 number] loss: 0.00850882672064472
+[16 epoch, 50 number] accuracy: 0.9984615384615385
+[16 epoch, 100 number] loss: 0.004592755998019129
+[16 epoch, 100 number] accuracy: 0.999375
+learn_rate : 0.000010000000000
+[17 epoch, 50 number] loss: 0.005064335221541114
+[17 epoch, 50 number] accuracy: 0.9996153846153846
+[17 epoch, 100 number] loss: 0.00999660259927623
+[17 epoch, 100 number] accuracy: 0.99625
+learn_rate : 0.000010000000000
+[18 epoch, 50 number] loss: 0.006454677634756081
+[18 epoch, 50 number] accuracy: 0.9980769230769231
+[18 epoch, 100 number] loss: 0.011035997399594634
+[18 epoch, 100 number] accuracy: 0.998125
+learn_rate : 0.000010000000000
+[19 epoch, 50 number] loss: 0.009396774261258543
+[19 epoch, 50 number] accuracy: 0.9984615384615385
+[19 epoch, 100 number] loss: 0.0064525418501580134
+[19 epoch, 100 number] accuracy: 0.99875
+learn_rate : 0.000010000000000
+[20 epoch, 50 number] loss: 0.007184122565086
+[20 epoch, 50 number] accuracy: 0.9976923076923077
+[20 epoch, 100 number] loss: 0.00557775415974902
+[20 epoch, 100 number] accuracy: 0.99875
+learn_rate : 0.000001000000000
+[21 epoch, 50 number] loss: 0.005039434622740373
+[21 epoch, 50 number] accuracy: 0.9996153846153846
+[21 epoch, 100 number] loss: 0.007512921788729727
+[21 epoch, 100 number] accuracy: 0.9975
+learn_rate : 0.000001000000000
+[22 epoch, 50 number] loss: 0.00419963664811803
+[22 epoch, 50 number] accuracy: 1.0
+[22 epoch, 100 number] loss: 0.009426116649992764
+[22 epoch, 100 number] accuracy: 0.99875
+learn_rate : 0.000001000000000
+[23 epoch, 50 number] loss: 0.003087545660091564
+[23 epoch, 50 number] accuracy: 0.9988461538461538
+[23 epoch, 100 number] loss: 0.00785625362303108
+[23 epoch, 100 number] accuracy: 0.998125
+learn_rate : 0.000001000000000
+[24 epoch, 50 number] loss: 0.006043668380007148
+[24 epoch, 50 number] accuracy: 0.9980769230769231
+[24 epoch, 100 number] loss: 0.0047675740794511515
+[24 epoch, 100 number] accuracy: 0.999375
+learn_rate : 0.000001000000000
+[25 epoch, 50 number] loss: 0.006666361555107869
+[25 epoch, 50 number] accuracy: 0.9988461538461538
+[25 epoch, 100 number] loss: 0.004670625679718796
+[25 epoch, 100 number] accuracy: 0.999375
+learn_rate : 0.000001000000000
+[26 epoch, 50 number] loss: 0.0077723967394558715
+[26 epoch, 50 number] accuracy: 0.9976923076923077
+[26 epoch, 100 number] loss: 0.005080736978561618
+[26 epoch, 100 number] accuracy: 0.99875
+learn_rate : 0.000000100000000
+[27 epoch, 50 number] loss: 0.026958036027936033
+[27 epoch, 50 number] accuracy: 0.9961538461538462
+[27 epoch, 100 number] loss: 0.009212043555162381
+[27 epoch, 100 number] accuracy: 0.9975
+learn_rate : 0.000000100000000
+[28 epoch, 50 number] loss: 0.0032928783318493513
+[28 epoch, 50 number] accuracy: 0.9992307692307693
+[28 epoch, 100 number] loss: 0.0031057305401191115
+[28 epoch, 100 number] accuracy: 1.0
+learn_rate : 0.000000100000000
+[29 epoch, 50 number] loss: 0.004640732107218355
+[29 epoch, 50 number] accuracy: 0.9984615384615385
+[29 epoch, 100 number] loss: 0.00730951861012727
+[29 epoch, 100 number] accuracy: 0.99875
+learn_rate : 0.000000100000000
+[30 epoch, 50 number] loss: 0.004744897045893595
+[30 epoch, 50 number] accuracy: 0.9992307692307693
+[30 epoch, 100 number] loss: 0.00793671841151081
+[30 epoch, 100 number] accuracy: 0.9975
+learn_rate : 0.000000100000000
+ResNet_time:2.155110732714335min
+Accuracy of the network on the 1798/1800 tests: 99.89 %
+[318.0, 297.0, 312.0, 301.0, 271.0, 301.0]
+
+Accuracy of normal : 99.69 %
+Accuracy of eccentric : 100.00 %
+Accuracy of broken_tooth : 100.00 %
+Accuracy of half_broken_tooth : 99.67 %
+Accuracy of surface_wearing : 100.00 %
+Accuracy of crack : 100.00 %
+
+多次测试 极限 99.89 %

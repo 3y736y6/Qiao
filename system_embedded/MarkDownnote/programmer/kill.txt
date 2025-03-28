@@ -1,0 +1,3 @@
+netstat -aon|findstr 12345
+tasklist /fi "pid eq 3508"
+taskkill /pid 3508 /f

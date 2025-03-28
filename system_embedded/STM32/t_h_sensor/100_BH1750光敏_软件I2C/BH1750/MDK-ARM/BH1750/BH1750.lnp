@@ -1,0 +1,27 @@
+--cpu Cortex-M3
+"bh1750\startup_stm32f103xe.o"
+"bh1750\main.o"
+"bh1750\gpio.o"
+"bh1750\usart.o"
+"bh1750\stm32f1xx_it.o"
+"bh1750\stm32f1xx_hal_msp.o"
+"bh1750\gy_302_bh1750.o"
+"bh1750\stm32f1xx_hal_gpio_ex.o"
+"bh1750\stm32f1xx_hal_tim.o"
+"bh1750\stm32f1xx_hal_tim_ex.o"
+"bh1750\stm32f1xx_hal_uart.o"
+"bh1750\stm32f1xx_hal.o"
+"bh1750\stm32f1xx_hal_rcc.o"
+"bh1750\stm32f1xx_hal_rcc_ex.o"
+"bh1750\stm32f1xx_hal_gpio.o"
+"bh1750\stm32f1xx_hal_dma.o"
+"bh1750\stm32f1xx_hal_cortex.o"
+"bh1750\stm32f1xx_hal_pwr.o"
+"bh1750\stm32f1xx_hal_flash.o"
+"bh1750\stm32f1xx_hal_flash_ex.o"
+"bh1750\stm32f1xx_hal_exti.o"
+"bh1750\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "BH1750\BH1750.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "BH1750.map" -o BH1750\BH1750.axf

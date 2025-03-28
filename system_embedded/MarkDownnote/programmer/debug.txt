@@ -1,0 +1,24 @@
+int main()
+{
+    int sum=0,amount=0,average=0;
+    typedef struct Student 
+    {
+        string name="";
+        int number=0;
+        int age=0;
+        int score=0;
+    }Stu;
+    Stu stu[5];
+    cout<<"enter five student's name:";
+    for(int i=0;i<5;cin>>(stu[i++].name));
+    cout<<"enter five student's number:";
+    for(int i=0;i<5;cin>>(stu[i++].number));
+    cout<<"enter five student's age:";
+    for(int i=0;i<5;cin>>(stu[i++].age));
+    cout<<"enter five student's score:";
+    for(int i=0;i<5;cin>>(stu[i++].score));
+    for(int i=0;i<5;sum+=stu[i++].score);
+    average=sum/5;
+    for(int i=0;i<5;stu[i++].score<60&&amount++);
+    printf("sum=,average=,amount=",sum,average,amount);
+}

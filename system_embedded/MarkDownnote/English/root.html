@@ -1,0 +1,541 @@
+<!DOCTYPE html><html><head>
+      <title>root</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="wordroot">WordROOT </h1>
+<h2 id="prefix">Prefix </h2>
+<h3 id="1-adacasa-朝向强调对于">1. <mark>ad,ac,as,a.</mark> 朝向/强调/对于/ </h3>
+<ol>
+<li>
+<p><strong>adapt</strong> 适应，改编 --apt 恰当的</p>
+<ul>
+<li>adaptation</li>
+<li>adapter</li>
+<li>If you'are prepared to adapt and learn,you can transform.</li>
+</ul>
+</li>
+<li>
+<p><strong>adopt</strong>  采用，收养  --opt 选择</p>
+</li>
+<li>
+<p><strong>adjust</strong> 矫正，调整 --just 公正的，仅仅的</p>
+<ul>
+<li>adjustment</li>
+</ul>
+</li>
+<li>
+<p><strong>adequate</strong>  充足的，能胜任的 enough</p>
+<ul>
+<li>inadequate</li>
+<li>be adequate for the task</li>
+</ul>
+</li>
+<li>
+<p><strong>adore</strong>  崇拜，爱慕 --or 诉说 --oral 口头的</p>
+<ul>
+<li>adoration</li>
+<li>adorable kid 可爱的(小孩)</li>
+<li>adorer</li>
+<li>I love and adore being a god.</li>
+</ul>
+</li>
+<li>
+<p><strong>advocate</strong> 提倡，主张/辩护律师 --voc 发声</p>
+<ul>
+<li>Elon Musk has long advocated for sending humans to Mars.</li>
+</ul>
+</li>
+<li>
+<p><strong>administer</strong> 管理，执行(.vt) --minister 大臣，部长</p>
+<ul>
+<li>administration 管理部门</li>
+<li>administrate  .v</li>
+<li>administrative .j</li>
+<li>administrator  .r</li>
+<li>The Prime Minister appointed some new ministers and administrators to make her administration lively</li>
+</ul>
+</li>
+<li>
+<p><strong>admire</strong> 钦佩，赞叹 --mir 惊叹</p>
+<ul>
+<li>mirror 镜子，榜样</li>
+<li>miracle 奇迹</li>
+<li>admirable</li>
+<li>admiration</li>
+</ul>
+</li>
+<li>
+<p><strong>adolescent</strong> 青春期的/青少年 --ol 生长</p>
+<ul>
+<li>adolescence 青春期</li>
+<li>I loved my freedom as an adolescent.</li>
+<li>abolish --ab否 --ol 生长 --ish suffix.v</li>
+</ul>
+</li>
+<li>
+<p><strong>acquaintance</strong> 相识，熟人 --quaint 了解<br>
++ acquaint 使认识<br>
++ acquainted  熟知的<br>
++ acquaintance  熟人(s)，相识<br>
++ Acquaintance may developed into romantic friendship.<br>
++ be well acquainted with sb.<br>
++ acquaint sb. with sth.</p>
+</li>
+<li>
+<p><strong>acquire</strong> 获得，学到 --quir 寻求</p>
+<ul>
+<li>the <strong>acquisition</strong> of language</li>
+<li>Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily.</li>
+<li>ever 曾经，始终，才能(转折)</li>
+<li>enquire 询问</li>
+<li>require 需要</li>
+</ul>
+</li>
+<li>
+<p><strong>acknowledge</strong> 承认，认可，致谢[对公众]</p>
+<ul>
+<li>It's a truth universally acknowledged,that a single man in possession of a good fortune must be in want of a wife.</li>
+</ul>
+</li>
+<li>
+<p><strong>associate</strong> 交往，联合 --soci 同伴</p>
+<ul>
+<li>association 联系，协会，社团</li>
+<li>Associate yourself with people of good quality.</li>
+<li>society 社会</li>
+<li>social</li>
+<li>socialism</li>
+<li>socialist  社会主义 的/者</li>
+</ul>
+</li>
+<li>
+<p><strong>assume</strong> 假设，承担</p>
+<ul>
+<li>assumption</li>
+<li>Telling the future by looking at the past assumes that conditions remain constant.</li>
+</ul>
+</li>
+<li>
+<p><strong>assign</strong> 指派，指定，布置 --sign 标记</p>
+<ul>
+<li>a tough <strong>assignment</strong> 任务，作业，分配</li>
+<li>My assignment is what every other's writer's assignment is:tell the truth of his own time.</li>
+</ul>
+</li>
+<li>
+<p><strong>abandon</strong> 放纵，遗弃/放纵，纵情(.n) --band 乐队</p>
+<ul>
+<li>an abandoned car</li>
+<li>sing with abandon(纵情的)</li>
+<li>It's only when you abandon your ambitions that they become impossible.</li>
+</ul>
+</li>
+<li>
+<p><strong>abundant</strong> 丰富的，充裕的 --bunt 码头-码头交易</p>
+<ul>
+<li>be abundant in</li>
+<li>abundance</li>
+</ul>
+</li>
+<li>
+<p><strong>agree</strong> 同意</p>
+<ul>
+<li>agreement</li>
+<li>Greece Greek greengrocer greedy</li>
+<li>degree 度(程度，角度，学位a master's degree硕士)</li>
+<li>She greet me with smell.</li>
+</ul>
+</li>
+<li>
+<p><strong>abroad</strong> 在海外j/v --broad 宽广的</p>
+<ul>
+<li>news at home and abroad</li>
+<li>go abroad for further study</li>
+<li>study/travel abroad</li>
+<li>broaden my horizons (眼界，地平线)</li>
+<li>broadcast 广播，散播/广播.n</li>
+</ul>
+</li>
+<li>
+<p><strong>aboard</strong> 在(飞机，车，船)上 --board 木板，甲板</p>
+<ul>
+<li>Welcome aboard!  欢迎登机/上船</li>
+<li>blackboard</li>
+<li>boarding family</li>
+<li>keyboard</li>
+<li>skateboard</li>
+<li>jump <strong>overboard</strong> 从船上落下adv.</li>
+<li>cupboard (cup杯子，奖杯)碗柜，橱柜</li>
+</ul>
+</li>
+<li>
+<p><strong>appeal</strong> 呼吁,上诉/吸引力，呼吁n  --peal 推</p>
+<ul>
+<li>an <strong>appealing</strong> smile 迷人的笑</li>
+<li>be <strong>expelled</strong> from school/country 开除，驱逐</li>
+<li>repeal 撤回</li>
+<li>It's interesting/attractive/appealing.</li>
+</ul>
+</li>
+<li>
+<p><strong>approve</strong> 认可，赞成，批准 --prove证明</p>
+<ul>
+<li>approve of   / disapprove of</li>
+<li>approval n.</li>
+<li>She looks to him for approval.</li>
+<li>approving approved</li>
+<li>She give me an approving nod.</li>
+</ul>
+</li>
+<li>
+<p><strong>appoint</strong> 任命，约定</p>
+<ul>
+<li>appointment</li>
+<li>make/keep an appointment</li>
+<li>disappoint 使 失望</li>
+<li>I'm disappointed in you ─ I really thought I could trust you!</li>
+<li>I was disappointed by the quality of the wine.</li>
+<li>I was disappointed |to see sth./for sth.</li>
+<li>disappointment</li>
+</ul>
+</li>
+<li>
+<p><strong>applaud</strong> 为鼓掌，喝彩--plaud 轰鸣</p>
+<ul>
+<li>applause 掌声，喝彩</li>
+<li>prise sb for sth --&gt; applaud sb for sth</li>
+<li>explode 使爆炸</li>
+</ul>
+</li>
+<li>
+<p><strong>appetite</strong> 食欲，胃口，渴望 --pet宠物-欲望</p>
+<ul>
+<li>appetizing food</li>
+<li>appetizer</li>
+<li>lack of appetite</li>
+</ul>
+</li>
+<li>
+<p><strong>approximately</strong> 大约地 --proxim 接近</p>
+<ul>
+<li>approximately two thirds   2/3</li>
+<li>about</li>
+</ul>
+</li>
+<li>
+<p><strong>appropriate</strong> 适当的 --proper 合适的</p>
+<ul>
+<li>a lady appropriately dressed</li>
+<li>properly</li>
+<li>improper wrong false faulty</li>
+<li>property</li>
+<li>It's entirely appropriate for you to become god.</li>
+</ul>
+</li>
+<li>
+<p><strong>approach</strong> 接近，靠近/方法，途径</p>
+<ul>
+<li>approachable 亲切的，可接近的</li>
+<li>approaching 即将到来的</li>
+<li>approach a problem</li>
+<li>a(an) way/method/approach(es) to sth.</li>
+<li>reproach 责备</li>
+</ul>
+</li>
+<li>
+<p><strong>accomplish</strong> 完成 --pli 填充</p>
+<ul>
+<li>a sense of <strong>accomplishment</strong></li>
+<li>an <strong>accomplished</strong> man 有成就/才华的人</li>
+<li>He had become an accomplished man of the world by the time he reached young manhood.</li>
+<li>accomplish one's aim</li>
+<li>Today I'll do what other's won't,so tomorrow I can do what other's can't.</li>
+</ul>
+</li>
+<li>
+<p><strong>accumulate</strong> 积累 --ul 表动态   --cum-sum 加</p>
+<ul>
+<li><strong>accumulation</strong> fund 公积金</li>
+<li>accumulate practical experience</li>
+</ul>
+</li>
+<li>
+<p><strong>accuse</strong> 指责，质控 --cuse-cause理由</p>
+<ul>
+<li>accuse ob of rape/murder/homicide(human+cide).</li>
+<li>accusation</li>
+</ul>
+</li>
+<li>
+<p><strong>accustom</strong> 使适应，使习惯 --custom 风俗</p>
+<ul>
+<li>be <strong>accustomed</strong> to sth.</li>
+<li>customs 海关</li>
+<li>customs duties 关税</li>
+<li>regular (定时的，有规律的，寻常的) <strong>customer</strong>s 老顾客</li>
+</ul>
+</li>
+<li>
+<p><strong>accurate</strong> 精确的 --cur-care</p>
+<ul>
+<li>cure 治疗 curious 好奇的</li>
+<li>accuracy</li>
+<li>accurately</li>
+<li>inaccurate</li>
+</ul>
+</li>
+<li>
+<p><strong>account</strong> 账目，理由说明 --count 计数</p>
+<ul>
+<li>accountant 会计</li>
+<li>accountable 有责任的，负责的</li>
+<li>The flight was postponed <strong>on account of</strong> bad weather.</li>
+<li>countable countless</li>
+<li>counter 柜台，计数器</li>
+</ul>
+</li>
+<li>
+<p><strong>accord</strong> 一致，符合 --cord-core 心</p>
+<ul>
+<li>according to</li>
+<li>This action would not <strong>be in accord with</strong> our policy.(政策，方针)</li>
+<li>The two sides signed <strong>a</strong> peace <strong>accord</strong> last July.</li>
+</ul>
+</li>
+<li>
+<p><strong>accompany</strong> 陪伴，伴随 --company 公司，同伙</p>
+<ul>
+<li>Children are admitted only if <strong>(be)accompanied by</strong> an adult.</li>
+</ul>
+</li>
+<li>
+<p><strong>accelerate</strong> 加速，促进 --celer 快速</p>
+<ul>
+<li>accelerator 油门</li>
+<li>celerity n.快速</li>
+<li>decelerate 减速</li>
+</ul>
+</li>
+<li>
+<p><strong>accommodate</strong> 为 提供住宿 --com 全 --mod 样式</p>
+<ul>
+<li>model 模型</li>
+<li>modern 现代</li>
+</ul>
+</li>
+<li>
+<p><strong>arrange</strong> 安排 --range 排列，范围</p>
+<ul>
+<li>arrangement 安排</li>
+<li>arrange a meeting with sb.</li>
+<li>arrange sb to do</li>
+<li>range 排列，范围</li>
+<li>rank 排名，等级</li>
+</ul>
+</li>
+<li>
+<p><strong>arrest</strong> 阻止，逮捕，中止v/n  || 吸引v</p>
+<ul>
+<li>arresting 有吸引力的</li>
+<li>under arrest 被捕</li>
+<li>rest</li>
+<li>social unrest 动荡</li>
+</ul>
+</li>
+<li>
+<p><strong>arrive</strong> 到达 --rive 河岸</p>
+<ul>
+<li>arrival</li>
+<li>the Yangtze River</li>
+</ul>
+</li>
+<li>
+<p><strong>affect</strong> 影响，打动 --fect 做</p>
+<ul>
+<li>affection 情感，喜爱</li>
+</ul>
+</li>
+<li>
+<p><strong>afford</strong> 买得起，给予，提供</p>
+<ul>
+<li>affordable</li>
+<li>It's extremely beneficial to participate in the competition,which affords you an opportunity to study abroad.</li>
+</ul>
+</li>
+<li>
+<p><strong>affair</strong> 事务</p>
+<ul>
+<li>current affair</li>
+<li>the Watergate affair</li>
+</ul>
+</li>
+<li>
+<p><strong>aggressive</strong> 激进的，好强的，侵略的 --gress 迈步</p>
+<ul>
+<li>aggress 挑衅</li>
+<li>military/physical aggression</li>
+</ul>
+</li>
+<li>
+<p><strong>attach</strong> 贴上/使依恋 --tach-touch</p>
+<ul>
+<li>attachment</li>
+<li>Attach yourself to those who advise you rather than praise you.</li>
+<li>m</li>
+<li>m<s>o</s>ustache  mouth嘴</li>
+<li>pay attention to --&gt; attach significance to sth</li>
+</ul>
+</li>
+<li>
+<p><strong>attack</strong> 攻击，袭击v/n --tack-touch and take 拿下</p>
+<ul>
+<li>attacker</li>
+<li>under a heart attacker</li>
+</ul>
+</li>
+<li>
+<p><strong>attempt</strong> 企图，尝试v/n  --tempt 引诱</p>
+<ul>
+<li>try to do --&gt; make an attempt to do sth</li>
+<li>empty 空的</li>
+</ul>
+</li>
+<li>
+<p><strong>allergic</strong> 对 过敏，反感</p>
+<ul>
+<li>allergy</li>
+</ul>
+</li>
+<li>
+<p><strong>allocate</strong> 分派，拨给 --lock 地点，放置</p>
+<ul>
+<li><strong>allocation</strong> of resources</li>
+<li>allocate sth to sp/sb</li>
+<li>local</li>
+<li>location</li>
+<li>locate 位于，定位</li>
+</ul>
+</li>
+<li>
+<p><strong>allow</strong> 允许 --low 低下-点头</p>
+<ul>
+<li>disallow</li>
+<li>allowable</li>
+<li>allowance 津贴，补助</li>
+</ul>
+</li>
+<li>
+<p><strong>announce</strong> 宣布 --nounce 发声</p>
+<ul>
+<li>announcement</li>
+<li>announcer 播音员</li>
+<li>pronounce 发音</li>
+</ul>
+</li>
+<li>
+<p><strong>annoy</strong> 使恼怒 --noy-noise</p>
+<ul>
+<li>annoying  annoyed</li>
+<li>annoyance 烦恼</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-asd">2. asd </h3>
+<p><strong>ban</strong><br>
+<strong>band</strong>[因为兴趣<strong>绑</strong>在一起]乐队<br>
+<strong>bandage</strong> 绷带<br>
+a--&gt;e 弯曲  bend-bent-bent<br>
+<strong>bend</strong> 使弯曲/弯道<br>
+<strong>bent</strong> 使弯曲ed/弯曲的/兴趣<br>
+a--&gt;i 绑起来束缚 bind-bound-bound<br>
+<strong>bind</strong> 绑定<br>
+<strong>bound</strong> 绑定ed/受约束的，有义务的，一定的<br>
+be bound to do(在各种条件约束下可能会发生)<br>
+train is bound for Xiamen<br>
+<strong>boundary</strong><br>
+<strong>bounce</strong> 使反弹/弹力<br>
+i--&gt;o 一根绳子弄成一圈 bond 纽带，结合<br>
+o--&gt;u 完整陆地的突出一角 bund 码头<br>
+a bunch of flowers<br>
+bundles of data 几捆数据/数据包</p>
+
+      </div>
+      <div class="md-sidebar-toc">
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#wordroot" class="md-toc-link"><p>WordROOT</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#prefix" class="md-toc-link"><p>Prefix</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#1-adacasa-朝向强调对于" class="md-toc-link">
+            <ol>
+<li><mark>ad,ac,as,a.</mark> 朝向/强调/对于/</li>
+</ol>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#2-asd" class="md-toc-link">
+            <ol start="2">
+<li>asd</li>
+</ol>
+
+          </a></div>
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    
+</div>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    
+    
+    
+    
+    
+    
+<script>
+document.body.setAttribute('html-show-sidebar-toc', true)
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>
