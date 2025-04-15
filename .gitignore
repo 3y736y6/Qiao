@@ -25,3 +25,5 @@ build/
 
 # 忽略环境变量文件
 .env
+
+git_commands.txt
